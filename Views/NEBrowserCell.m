@@ -40,7 +40,7 @@
 }
 
 #pragma mark - set
-- (void)setAsset:(ALAsset *)asset
+- (void)setAsset:(NEAsset *)asset
 {
     if (_asset != asset) {
         _asset = asset;
@@ -58,18 +58,19 @@
     self.zoomingScrollView.zoomScale = 1;
     self.zoomingScrollView.contentSize = CGSizeMake(0, 0);
     
-    UIImage *img = [UIImage imageWithCGImage:[[self.asset defaultRepresentation] fullScreenImage]];
-    self.photoImageView.image = img;
-    self.photoImageView.hidden = NO;
-    CGRect photoImageViewFrame;
-    photoImageViewFrame.origin = CGPointZero;
-    photoImageViewFrame.size = CGSizeMake(img.size.width/screenScale, img.size.height/screenScale);
-    self.photoImageView.frame = photoImageViewFrame;
-    self.zoomingScrollView.contentSize = photoImageViewFrame.size;
-            
-    // Set zoom to minimum zoom
-    [self setMaxMinZoomScalesForCurrentBounds];
-    [self setNeedsLayout];
+    __weak typeof(self) weakself = self;
+    [self.asset fetchImageFull:NEImagePickerImaageSizeFullScreen complete:^(UIImage *image) {
+        weakself.photoImageView.image = image;
+        weakself.photoImageView.hidden = NO;
+        CGRect photoImageViewFrame;
+        photoImageViewFrame.origin = CGPointZero;
+        photoImageViewFrame.size = CGSizeMake(image.size.width/screenScale, image.size.height/screenScale);
+        weakself.photoImageView.frame = photoImageViewFrame;
+        weakself.zoomingScrollView.contentSize = photoImageViewFrame.size;
+        // Set zoom to minimum zoom
+        [weakself setMaxMinZoomScalesForCurrentBounds];
+        [weakself setNeedsLayout];
+    }];
 }
 
 

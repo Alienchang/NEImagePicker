@@ -7,7 +7,6 @@
 //
 
 #import "NEFullImageButton.h"
-#import "UIView+NEImagePicker.h"
 
 #define kDNFullImageButtonFont  [UIFont systemFontOfSize:13]
 static NSInteger const buttonPadding = 10;
@@ -26,8 +25,8 @@ static NSInteger const buttonImageWidth = 16;
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-        self.height = 28;
-        self.width = CGRectGetWidth([[UIScreen mainScreen] bounds])/2 -20;
+        CGRect rect = CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), CGRectGetWidth([[UIScreen mainScreen] bounds])/2 -20, 28);
+        [self setFrame:rect];
         [self fullImageButton];
         [self imageSizeLabel];
         [self indicatorView];
@@ -58,8 +57,7 @@ static NSInteger const buttonImageWidth = 16;
 {
     if (nil == _fullImageButton) {
         _fullImageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _fullImageButton.width = [self fullImageButtonWidth];
-        _fullImageButton.height = 28;
+        [_fullImageButton setFrame:CGRectMake(0, 0, [self fullImageButtonWidth], 28)];
         _fullImageButton.backgroundColor = [UIColor clearColor];
         [_fullImageButton setTitle:NSLocalizedStringFromTable(@"fullImage", @"NEImagePicker", @"原图") forState:UIControlStateNormal];
         _fullImageButton.titleLabel.font = kDNFullImageButtonFont;
@@ -68,8 +66,8 @@ static NSInteger const buttonImageWidth = 16;
         [_fullImageButton setImage:[UIImage imageNamed:@"photo_full_image_unselected"] forState:UIControlStateNormal];
         [_fullImageButton setImage:[UIImage imageNamed:@"photo_full_image_selected"] forState:UIControlStateSelected];
         _fullImageButton.contentVerticalAlignment = NSTextAlignmentRight;
-        [_fullImageButton setTitleEdgeInsets:UIEdgeInsetsMake(0, buttonPadding-buttonImageWidth, 6, 0)];
-        [_fullImageButton setImageEdgeInsets:UIEdgeInsetsMake(6, 0, 6, _fullImageButton.width - buttonImageWidth)];
+        [_fullImageButton setTitleEdgeInsets:UIEdgeInsetsMake(0, buttonPadding - buttonImageWidth, 6, 0)];
+        [_fullImageButton setImageEdgeInsets:UIEdgeInsetsMake(6, 0, 6, CGRectGetWidth(_fullImageButton.frame) - buttonImageWidth)];
         [self addSubview:_fullImageButton];
     }
     return _fullImageButton;
@@ -78,7 +76,7 @@ static NSInteger const buttonImageWidth = 16;
 - (UIActivityIndicatorView *)indicatorView
 {
     if (nil == _indicatorView) {
-        _indicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(self.fullImageButton.width, 2, 26, 26)];
+        _indicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.fullImageButton.frame), 2, 26, 26)];
         _indicatorView.hidesWhenStopped = YES;
         [_indicatorView stopAnimating];
         [self addSubview:_indicatorView];
@@ -99,12 +97,13 @@ static NSInteger const buttonImageWidth = 16;
     if (_selected != selected) {
         _selected = selected;
         self.fullImageButton.selected = _selected;
-        self.fullImageButton.width = [self fullImageButtonWidth];
+        CGRect imageButtonFrame = self.fullImageButton.frame;
+        [self.fullImageButton setFrame:CGRectMake(CGRectGetMinX(imageButtonFrame), CGRectGetMinY(imageButtonFrame), [self fullImageButtonWidth], CGRectGetHeight(imageButtonFrame))];
+        
         [self.fullImageButton setTitleEdgeInsets:UIEdgeInsetsMake(0, buttonPadding-buttonImageWidth, 6, 0)];
-        [self.fullImageButton setImageEdgeInsets:UIEdgeInsetsMake(6, 0, 6, self.fullImageButton.width - buttonImageWidth)];
-        CGFloat labelWidth = self.width - self.fullImageButton.width;
-        self.imageSizeLabel.left = self.fullImageButton.width;
-        self.imageSizeLabel.width = labelWidth;
+        [self.fullImageButton setImageEdgeInsets:UIEdgeInsetsMake(6, 0, 6, CGRectGetWidth(imageButtonFrame) - buttonImageWidth)];
+        CGFloat labelWidth = CGRectGetWidth(self.frame) - CGRectGetWidth(self.fullImageButton.frame);
+        [self.imageSizeLabel setFrame:CGRectMake(CGRectGetWidth(imageButtonFrame), CGRectGetMinY(self.imageSizeLabel.frame), labelWidth, CGRectGetHeight(self.imageSizeLabel.frame))];
         self.imageSizeLabel.hidden = !_selected;
     }
 }

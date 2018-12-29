@@ -57,13 +57,13 @@
         default:
             break;
     }
-    
+
     [button setTitleEdgeInsets:insets];
     [button setFrame:CGRectMake(0, 0, 64, 30)];
     [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:text forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:16.];
-    [button setTitleColor:[UIColor colorWithRed:255/ 255. green:89/ 255. blue:106/ 255. alpha:1] forState:UIControlStateNormal];
+    [button setTitleColor:self.navigationController.navigationBar.tintColor forState:UIControlStateNormal];
     
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     switch (position) {

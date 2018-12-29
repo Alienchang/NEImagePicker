@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/ALAsset.h>
-
+#import "UIImage+NEImagePicker.h"
+#import "NEAsset.h"
 @class NEAssetsViewCell;
 
 @protocol NEAssetsViewCellDelegate <NSObject>
@@ -20,10 +21,13 @@
 
 @interface NEAssetsViewCell : UICollectionViewCell
 
-@property (nonatomic, strong) ALAsset *asset;
+@property (nonatomic, strong) NEAsset *asset;
 @property (nonatomic, assign) BOOL isSelected;
 @property (nonatomic, weak) id<NEAssetsViewCellDelegate> delegate;
 
-- (void)fillWithAsset:(ALAsset *)asset isSelected:(BOOL)seleted;
+@property (nonatomic ,strong) UIImage *selectedImageIcon;
+@property (nonatomic ,strong) UIImage *unselectedImageIcon;
+
+- (void)fillWithAsset:(NEAsset *)asset isSelected:(BOOL)seleted;
 
 @end

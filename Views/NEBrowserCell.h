@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AssetsLibrary/AssetsLibrary.h>
+#import "NEAsset.h"
 @class NEPhotoBrowser;
 
 @interface NEBrowserCell : UICollectionViewCell
 
 @property (nonatomic, weak) NEPhotoBrowser *photoBrowser;
 
-@property (nonatomic, strong) ALAsset *asset;
+@property (nonatomic, strong) NEAsset *asset;
 
 @end

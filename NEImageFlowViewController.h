@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "NEAlbum.h"
+#import "NEImagePickerSourceConfig.h"
 @interface NEImageFlowViewController : UIViewController
-@property (nonatomic ,copy)   NSString *confirmText;
+@property (nonatomic ,strong) NEImagePickerSourceConfig *sourceConfig;
+@property (nonatomic ,copy)   NSString   *confirmText;
 @property (nonatomic ,assign) NSUInteger limiteCount;
-- (instancetype)initWithGroupURL:(NSURL *)assetsGroupURL;
+- (instancetype)initWithAlbum:(NEAlbum *)album;
 @end

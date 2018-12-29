@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import <Photos/Photos.h>
 
 typedef enum : NSUInteger {
     NEImagePickerImaageSizeFull,
@@ -17,10 +18,14 @@ typedef enum : NSUInteger {
 
 @interface NEAsset : NSObject
 
-@property (nonatomic, strong) NSURL *url;  //ALAsset url
-@property (nonatomic, strong) UIImage *fullImage;
-@property (nonatomic ,strong) UIImage *image;
+@property (nonatomic, strong) NSURL     *url;  //ALAsset url
+@property (nonatomic, copy)   NSString  *LocalIdentifier; //PHAsset identifier
+@property (nonatomic, strong) UIImage   *fullImage;
+@property (nonatomic ,strong) UIImage   *image;
+@property (nonatomic ,assign) NSInteger imageSize;
+@property (nonatomic ,strong) PHAsset   *phAsset;
 
 - (BOOL)isEqualToAsset:(NEAsset *)asset;
-- (void)fetchImageFull:(NEImagePickerImaageSizeType)sizeType complete:(void (^)(UIImage *))complete;
+- (void)fetchImageFull:(NEImagePickerImaageSizeType)sizeType
+              complete:(void (^)(UIImage *image))complete;
 @end

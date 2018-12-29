@@ -8,10 +8,11 @@
 
 #import "NEPhotoBrowser.h"
 #import "UIViewController+NEImagePicker.h"
-#import "UIView+NEImagePicker.h"
 #import "NEBrowserCell.h"
-@interface NEPhotoBrowser () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
-{
+#import "UIImage+NEImagePicker.h"
+#import "NEImagePickerController.h"
+
+@interface NEPhotoBrowser () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
     BOOL _statusBarShouldBeHidden;
     BOOL _didSavePreviousStateOfNavBar;
     BOOL _viewIsActive;
@@ -31,11 +32,8 @@
 @property (nonatomic, strong) UICollectionView *browserCollectionView;
 @property (nonatomic, strong) UIToolbar *toolbar;
 @property (nonatomic, strong) UIButton *checkButton;
-
-
-@property (nonatomic, strong) NSMutableArray *photoDataSources;
+@property (nonatomic, strong) NSMutableArray <NEAsset *>*assetsDataSources;
 @property (nonatomic, assign) NSInteger currentIndex;
-
 @property (nonatomic, getter=isFullImage) BOOL fullImage;
 
 @end
@@ -47,7 +45,18 @@
                      fullImage:(BOOL)isFullImage {
     self = [super init];
     if (self) {
-        _photoDataSources = [[NSMutableArray alloc] initWithArray:photosArray];
+        _currentIndex = index;
+        _fullImage = isFullImage;
+    }
+    return self;
+}
+
+- (instancetype)initWithAssets:(NSArray <NEAsset *>*)assets
+                  currentIndex:(NSInteger)index
+                     fullImage:(BOOL)isFullImage {
+    self = [super init];
+    if (self) {
+        _assetsDataSources = [[NSMutableArray alloc] initWithArray:assets];
         _currentIndex = index;
         _fullImage = isFullImage;
     }
@@ -59,6 +68,13 @@
     [self setupView];
     [self updateSelestedNumber];
     [self updateNavigationBarAndToolBar];
+    if ([self NEImagePickerController].sourceConfig.navigationBackImage) {
+        [self createBarButtonItemAtPosition:NEImagePickerNavigationBarPositionLeft
+                          statusNormalImage:[self NEImagePickerController].sourceConfig.navigationBackImage
+                       statusHighlightImage:[self NEImagePickerController].sourceConfig.navigationBackImage
+                                     action:@selector(backButtonAction)];
+    }
+    
     // Do any additional setup after loading the view.
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -119,17 +135,13 @@
     [self browserCollectionView];
     [self toolbar];
     [self setupBarButtonItems];
-    [self createBarButtonItemAtPosition:NEImagePickerNavigationBarPositionLeft
-                      statusNormalImage:[UIImage imageNamed:@"btn-nav-back"]
-                   statusHighlightImage:[UIImage imageNamed:@"btn-nav-back"]
-                                 action:@selector(backButtonAction)];
     UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.checkButton];
     self.navigationItem.rightBarButtonItem = rightButtonItem;
 }
 
 - (void)setupData
 {
-    self.photoDataSources = [NSMutableArray new];
+    self.assetsDataSources = [NSMutableArray new];
 }
 
 - (void)setupBarButtonItems
@@ -143,17 +155,15 @@
 }
 
 - (void)updateNavigationBarAndToolBar {
-    NSUInteger totalNumber = self.photoDataSources.count;
-//    self.title = [NSString stringWithFormat:@"%@/%@",@(self.currentIndex+1),@(totalNumber)];
     BOOL isSeleted = NO;
-    if ([self.delegate respondsToSelector:@selector(photoBrowser:currentPhotoAssetIsSeleted:)]) {
-        isSeleted = [self.delegate photoBrowser:self currentPhotoAssetIsSeleted:[self.photoDataSources objectAtIndex:self.currentIndex]];
+    if ([self.delegate respondsToSelector:@selector(ne_photoBrowser:currentPhotoAssetIsSeleted:)]) {
+        isSeleted = [self.delegate ne_photoBrowser:self currentPhotoAssetIsSeleted:[self.assetsDataSources objectAtIndex:self.currentIndex]];
     }
     self.checkButton.selected = isSeleted;
     
     if (self.isFullImage) {
-        ALAsset *asset = self.photoDataSources[self.currentIndex];
-        NSInteger size = (NSUInteger)(asset.defaultRepresentation.size/1024);
+        NEAsset *asset = self.assetsDataSources[self.currentIndex];
+        NSInteger size = (NSUInteger)(asset.imageSize/1024);
         CGFloat imageSize = (CGFloat)size;
         NSString *imageSizeString;
         if (size > 1024) {
@@ -168,8 +178,8 @@
 - (void)updateSelestedNumber
 {
     NSUInteger selectedNumber = 0;
-    if ([self.delegate respondsToSelector:@selector(seletedPhotosNumberInPhotoBrowser:)]) {
-        selectedNumber = [self.delegate seletedPhotosNumberInPhotoBrowser:self];
+    if ([self.delegate respondsToSelector:@selector(ne_seletedPhotosNumberInPhotoBrowser:)]) {
+        selectedNumber = [self.delegate ne_seletedPhotosNumberInPhotoBrowser:self];
     }
     
     self.sendButton.badgeValue = [NSString stringWithFormat:@"%@",@(selectedNumber)];
@@ -190,7 +200,7 @@
 
     if ([[UINavigationBar class] respondsToSelector:@selector(appearance)]) {
         [navBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-        [navBar setBackgroundImage:nil forBarMetrics:UIBarMetricsLandscapePhone];
+        [navBar setBackgroundImage:nil forBarMetrics:UIBarMetricsCompact];
     }
 }
 
@@ -205,7 +215,7 @@
     _previousNavBarStyle = self.navigationController.navigationBar.barStyle;
     if ([[UINavigationBar class] respondsToSelector:@selector(appearance)]) {
         _previousNavigationBarBackgroundImageDefault = [self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault];
-        _previousNavigationBarBackgroundImageLandscapePhone = [self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsLandscapePhone];
+        _previousNavigationBarBackgroundImageLandscapePhone = [self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsCompact];
     }
 }
 
@@ -221,7 +231,7 @@
         navBar.barStyle = _previousNavBarStyle;
         if ([[UINavigationBar class] respondsToSelector:@selector(appearance)]) {
             [navBar setBackgroundImage:_previousNavigationBarBackgroundImageDefault forBarMetrics:UIBarMetricsDefault];
-            [navBar setBackgroundImage:_previousNavigationBarBackgroundImageLandscapePhone forBarMetrics:UIBarMetricsLandscapePhone];
+            [navBar setBackgroundImage:_previousNavigationBarBackgroundImageLandscapePhone forBarMetrics:UIBarMetricsCompact];
         }
         // Restore back button if we need to
         if (_previousViewControllerBackButton) {
@@ -236,13 +246,13 @@
 - (void)checkButtonAction
 {
     if (self.checkButton.selected) {
-        if (self.delegate && [self.delegate respondsToSelector:@selector(photoBrowser:deseletedAsset:)]) {
-            [self.delegate photoBrowser:self deseletedAsset:self.photoDataSources[self.currentIndex]];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(ne_photoBrowser:deseletedAsset:)]) {
+            [self.delegate ne_photoBrowser:self deseletedAsset:self.assetsDataSources[self.currentIndex]];
             self.checkButton.selected = NO;
         }
     } else {
-        if (self.delegate && [self.delegate respondsToSelector:@selector(photoBrowser:seletedAsset:)]) {
-            self.checkButton.selected = [self.delegate photoBrowser:self seletedAsset:self.photoDataSources[self.currentIndex]];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(ne_photoBrowser:seletedAsset:)]) {
+            self.checkButton.selected = [self.delegate ne_photoBrowser:self seletedAsset:self.assetsDataSources[self.currentIndex]];
         }
     }
     
@@ -255,8 +265,8 @@
 
 - (void)sendButtonAction
 {
-    if ([self.delegate respondsToSelector:@selector(sendImagesFromPhotobrowser:currentAsset:)]) {
-        [self.delegate sendImagesFromPhotobrowser:self currentAsset:self.photoDataSources[self.currentIndex]];
+    if ([self.delegate respondsToSelector:@selector(ne_sendImagesFromPhotobrowser:currentAsset:)]) {
+        [self.delegate ne_sendImagesFromPhotobrowser:self currentAsset:self.assetsDataSources[self.currentIndex]];
     }
 }
 
@@ -266,21 +276,22 @@
     if (nil == _checkButton) {
         _checkButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _checkButton.frame = CGRectMake(0, 0, 24, 24);
-        [_checkButton setBackgroundImage:[UIImage imageNamed:@"chatIcChoseS"] forState:UIControlStateSelected];
-        [_checkButton setBackgroundImage:[UIImage imageNamed:@"chatIcChoseN"] forState:UIControlStateNormal];
+        [_checkButton setBackgroundImage:[self NEImagePickerController].sourceConfig.imageSelectedIcon forState:UIControlStateSelected];
+        [_checkButton setBackgroundImage:[self NEImagePickerController].sourceConfig.imageunselectedIcon forState:UIControlStateNormal];
         [_checkButton addTarget:self action:@selector(checkButtonAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _checkButton;
 }
 
-
-
 - (NESendButton *)sendButton
 {
     if (nil == _sendButton) {
         _sendButton = [[NESendButton alloc] initWithFrame:CGRectZero];
-        [_sendButton setEnabled:[UIColor colorWithRed:255 /255. green:89 /255. blue:106 /255. alpha:1]];
-        [_sendButton setDisabledColor:[UIColor colorWithHexString:@"dbdbdb"]];
+        [_sendButton setEnabled:NO];
+        [_sendButton setDisabledColor:[self NEImagePickerController].disableTintColor];
+        [_sendButton setEnabledColor:[self NEImagePickerController].tintColor];
+        [_sendButton setDisabledTitleColor:[self NEImagePickerController].disableTitleColor];
+        [_sendButton setEnabledTitleColor:[self NEImagePickerController].enableTitleColor];
         [_sendButton addTaget:self action:@selector(sendButtonAction)];
     }
     return  _sendButton;
@@ -293,7 +304,7 @@
         _toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - height, self.view.bounds.size.width, height)];
         if ([[UIToolbar class] respondsToSelector:@selector(appearance)]) {
             [_toolbar setBackgroundImage:nil forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
-            [_toolbar setBackgroundImage:nil forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsLandscapePhone];
+            [_toolbar setBackgroundImage:nil forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsCompact];
         }
         _toolbar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
         [self.view addSubview:_toolbar];
@@ -325,14 +336,14 @@
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.photoDataSources count];
+    return [self.assetsDataSources count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NEBrowserCell *cell = (NEBrowserCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([NEBrowserCell class]) forIndexPath:indexPath];
     
-    cell.asset = [self.photoDataSources objectAtIndex:indexPath.row];
+    cell.asset = [self.assetsDataSources objectAtIndex:indexPath.row];
     cell.photoBrowser = self;
     return cell;
 }
@@ -349,8 +360,6 @@
     CGFloat offsetX = scrollView.contentOffset.x;
     CGFloat itemWidth = CGRectGetWidth(self.browserCollectionView.frame);
     CGFloat currentPageOffset = itemWidth * self.currentIndex;
-    CGFloat deltaOffset = offsetX - currentPageOffset;
-
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
@@ -374,7 +383,7 @@
 - (void)setControlsHidden:(BOOL)hidden animated:(BOOL)animated{
     
     // Force visible
-    if (nil == self.photoDataSources || self.photoDataSources.count == 0)
+    if (nil == self.assetsDataSources || self.assetsDataSources.count == 0)
         hidden = NO;
     // Animations & positions
     CGFloat animatonOffset = 20;
@@ -402,9 +411,9 @@
         // Nav bar slides up on it's own on iOS 7
         [self.navigationController.navigationBar setAlpha:alpha];
         // Toolbar
-        _toolbar.frame = frame;
-        if (hidden) _toolbar.frame = CGRectOffset(_toolbar.frame, 0, animatonOffset);
-        _toolbar.alpha = alpha;
+        self.toolbar.frame = frame;
+        if (hidden) self.toolbar.frame = CGRectOffset(self.toolbar.frame, 0, animatonOffset);
+        self.toolbar.alpha = alpha;
         
     } completion:^(BOOL finished) {}];
 }
@@ -420,4 +429,15 @@
 - (BOOL)areControlsHidden { return (_toolbar.alpha == 0); }
 - (void)hideControls { [self setControlsHidden:YES animated:YES]; }
 - (void)toggleControls { [self setControlsHidden:![self areControlsHidden] animated:YES]; }
+
+#pragma mark -- getter
+- (NEImagePickerController *)NEImagePickerController {
+    if (nil == self.navigationController
+        ||
+        NO == [self.navigationController isKindOfClass:[NEImagePickerController class]])
+    {
+        NSAssert(false, @"check the navigation controller");
+    }
+    return (NEImagePickerController *)self.navigationController;
+}
 @end

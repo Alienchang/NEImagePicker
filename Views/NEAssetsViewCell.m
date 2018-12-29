@@ -7,7 +7,7 @@
 //
 
 #import "NEAssetsViewCell.h"
-
+#import "NEImageHelper.h"
 
 @interface NEAssetsViewCell ()
 @property (nonatomic, strong) UIImageView *imageView;
@@ -122,15 +122,22 @@
 }
 
 
-- (void)fillWithAsset:(ALAsset *)asset isSelected:(BOOL)seleted
+- (void)fillWithAsset:(NEAsset *)asset isSelected:(BOOL)seleted
 {
     self.isSelected = seleted;
     self.asset = asset;
-    CGImageRef thumbnailImageRef = [asset aspectRatioThumbnail];
-    if (thumbnailImageRef) {
-        self.imageView.image = [UIImage imageWithCGImage:thumbnailImageRef];
+    __weak typeof(self) weakself = self;
+    if (asset.image) {
+        self.imageView.image = asset.image;
     } else {
-        self.imageView.image = [UIImage imageNamed:@"assets_placeholder_picture"];
+        [asset fetchImageFull:NEImagePickerImaageSizeThumb complete:^(UIImage *image) {
+            if (image) {
+                weakself.imageView.image = image;
+                [asset setImage:image];
+            } else {
+                weakself.imageView.image = [UIImage imageNamed:@"assets_placeholder_picture"];
+            }
+        }];
     }
 }
 
@@ -144,7 +151,7 @@
 - (void)updateCheckImageView
 {
     if (self.checkButton.selected) {
-        self.checkImageView.image = [UIImage imageNamed:@"chatIcChoseS"];
+        self.checkImageView.image = self.selectedImageIcon;
         
         [UIView animateWithDuration:0.2 animations:^{
             self.checkImageView.transform = CGAffineTransformMakeScale(1.2, 1.2);
@@ -155,7 +162,7 @@
                              }];
                          }];
     } else {
-        self.checkImageView.image = [UIImage imageNamed:@"chatIcChoseN"];
+        self.checkImageView.image = self.unselectedImageIcon;
     }
 }
 

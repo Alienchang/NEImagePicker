@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface NEAlbumTableViewController : UITableViewController
-@property (nonatomic ,copy) NSString *confirmText;
+@property (nonatomic ,copy)   NSString   *confirmText;
 @property (nonatomic ,assign) NSUInteger limiteCount;
 @end

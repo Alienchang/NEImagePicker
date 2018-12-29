@@ -14,6 +14,8 @@
 @property (nonatomic, copy)   NSString *badgeValue;
 @property (nonatomic ,strong) UIColor *enabledColor;
 @property (nonatomic ,strong) UIColor *disabledColor;
+@property (nonatomic ,strong) UIColor *enabledTitleColor;
+@property (nonatomic ,strong) UIColor *disabledTitleColor;
 @property (nonatomic ,copy)   NSString *titleText;
 
 - (instancetype)initWithFrame:(CGRect)frame;

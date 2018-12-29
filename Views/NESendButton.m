@@ -7,7 +7,7 @@
 //
 
 #import "NESendButton.h"
-#import "UIView+NEImagePicker.h"
+
 #import "UIColor+Hex.h"
 #define kSendButtonFont  [UIFont systemFontOfSize:15]
 static NSString *const NESendButtonTintNormalColor = @"#1FB823";
@@ -29,12 +29,7 @@ static CGFloat const kSendButtonTextWitdh = 38.0f;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.left = 0;
-        self.right = 0;
-        self.top = 0;
-        self.bottom = 0;
-        self.width = 74;
-        self.height = 33;
+        [self setFrame:CGRectMake(0, 0, 74, 33)];
         [self setupViews];
         self.badgeValue = @"0";
     }
@@ -44,7 +39,7 @@ static CGFloat const kSendButtonTextWitdh = 38.0f;
 - (void)setupViews
 {
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.frame = CGRectMake(0, 0, self.width, self.height);
+    gradientLayer.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
     gradientLayer.colors = @[
                              (__bridge id)[UIColor colorWithRed:255 /255. green:101 /255. blue:186 /255. alpha:1].CGColor,
                              (__bridge id)[UIColor colorWithRed:255 /255. green:90 /255. blue:91 /255. alpha:1].CGColor
@@ -56,7 +51,7 @@ static CGFloat const kSendButtonTextWitdh = 38.0f;
     [self.layer addSublayer:gradientLayer];
     
     _sendButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _sendButton.frame = CGRectMake(0, 0, self.width, self.height);
+    _sendButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
     [_sendButton setTitle:[NSString stringWithFormat:@"%@(0)",self.titleText]
                  forState:UIControlStateNormal];
     [_sendButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -91,8 +86,10 @@ static CGFloat const kSendButtonTextWitdh = 38.0f;
     [self.sendButton setEnabled:enabled];
     if (enabled) {
         [self.sendButton setBackgroundColor:self.enabledColor];
+        [self.sendButton setTitleColor:self.enabledTitleColor forState:UIControlStateNormal];
     }else{
         [self.sendButton setBackgroundColor:self.disabledColor];
+        [self.sendButton setTitleColor:self.disabledTitleColor forState:UIControlStateNormal];
     }
 }
 
