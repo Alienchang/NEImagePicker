@@ -16,19 +16,27 @@
 @implementation NEAlbum
 - (void)fetchAlbumImage:(void(^)(UIImage *image))complete {
     PHFetchOptions *fetchOption = [PHFetchOptions new];
-    [fetchOption setIncludeAssetSourceTypes:PHAssetSourceTypeUserLibrary];
+    if (@available(iOS 9.0, *)) {
+        [fetchOption setIncludeAssetSourceTypes:PHAssetSourceTypeUserLibrary];
+    } else {
+        // Fallback on earlier versions
+    }
     PHFetchResult *result = [PHAssetCollection fetchAssetCollectionsWithLocalIdentifiers:@[self.localIdentifier] options:fetchOption];
     if (result.count) {
         PHAssetCollection *assetCollection = result[0];
         PHFetchResult *fetchResult = [PHAsset fetchAssetsInAssetCollection:assetCollection options:nil];
-        PHAsset *asset = fetchResult[0];
-        __weak typeof(self) weakself = self;
-        [NEImageHelper getImageWithAsset:asset targetSize:CGSizeMake(200, 200) complete:^(UIImage *image) {
-            [weakself setAlbumImage:image];
-            if (complete) {
-                complete(image);
-            }
-        }];
+        if (!fetchResult.count) {
+            complete(nil);
+        } else {
+            PHAsset *asset = fetchResult[0];
+            __weak typeof(self) weakself = self;
+            [NEImageHelper getImageWithAsset:asset targetSize:CGSizeMake(200, 200) complete:^(UIImage *image) {
+                [weakself setAlbumImage:image];
+                if (complete) {
+                    complete(image);
+                }
+            }];
+        }
     } else {
         complete(nil);
     }
@@ -43,7 +51,11 @@
         }
         dispatch_async(self.fetchImageQueue, ^{
             PHFetchOptions *fetchOption = [PHFetchOptions new];
-            [fetchOption setIncludeAssetSourceTypes:PHAssetSourceTypeUserLibrary];
+            if (@available(iOS 9.0, *)) {
+                [fetchOption setIncludeAssetSourceTypes:PHAssetSourceTypeUserLibrary];
+            } else {
+                // Fallback on earlier versions
+            }
             PHFetchResult *result = [PHAssetCollection fetchAssetCollectionsWithLocalIdentifiers:@[self.localIdentifier] options:fetchOption];
             if (result.count) {
                 PHAssetCollection *assetCollection = result[0];
@@ -76,7 +88,11 @@
     }
     dispatch_async(self.fetchImageQueue, ^{
         PHFetchOptions *fetchOption = [PHFetchOptions new];
-        [fetchOption setIncludeAssetSourceTypes:PHAssetSourceTypeUserLibrary];
+        if (@available(iOS 9.0, *)) {
+            [fetchOption setIncludeAssetSourceTypes:PHAssetSourceTypeUserLibrary];
+        } else {
+            // Fallback on earlier versions
+        }
         PHFetchResult *result = [PHAssetCollection fetchAssetCollectionsWithLocalIdentifiers:@[self.localIdentifier] options:fetchOption];
         if (result.count) {
             PHAssetCollection *assetCollection = result[0];

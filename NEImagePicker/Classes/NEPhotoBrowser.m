@@ -139,13 +139,11 @@
     self.navigationItem.rightBarButtonItem = rightButtonItem;
 }
 
-- (void)setupData
-{
+- (void)setupData {
     self.assetsDataSources = [NSMutableArray new];
 }
 
-- (void)setupBarButtonItems
-{
+- (void)setupBarButtonItems {
     UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIBarButtonItem *item3 = [[UIBarButtonItem alloc] initWithCustomView:self.sendButton];
     UIBarButtonItem *item4 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
@@ -175,8 +173,7 @@
     }
 }
 
-- (void)updateSelestedNumber
-{
+- (void)updateSelestedNumber {
     NSUInteger selectedNumber = 0;
     if ([self.delegate respondsToSelector:@selector(ne_seletedPhotosNumberInPhotoBrowser:)]) {
         selectedNumber = [self.delegate ne_seletedPhotosNumberInPhotoBrowser:self];
@@ -243,8 +240,7 @@
 }
 
 #pragma mark - ui actions
-- (void)checkButtonAction
-{
+- (void)checkButtonAction {
     if (self.checkButton.selected) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(ne_photoBrowser:deseletedAsset:)]) {
             [self.delegate ne_photoBrowser:self deseletedAsset:self.assetsDataSources[self.currentIndex]];
@@ -263,16 +259,14 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)sendButtonAction
-{
+- (void)sendButtonAction {
     if ([self.delegate respondsToSelector:@selector(ne_sendImagesFromPhotobrowser:currentAsset:)]) {
         [self.delegate ne_sendImagesFromPhotobrowser:self currentAsset:self.assetsDataSources[self.currentIndex]];
     }
 }
 
 #pragma mark - get/set
-- (UIButton *)checkButton
-{
+- (UIButton *)checkButton {
     if (nil == _checkButton) {
         _checkButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _checkButton.frame = CGRectMake(0, 0, 24, 24);
@@ -283,8 +277,7 @@
     return _checkButton;
 }
 
-- (NESendButton *)sendButton
-{
+- (NESendButton *)sendButton {
     if (nil == _sendButton) {
         _sendButton = [[NESendButton alloc] initWithFrame:CGRectZero];
         [_sendButton setEnabled:NO];
@@ -297,8 +290,7 @@
     return  _sendButton;
 }
 
-- (UIToolbar *)toolbar
-{
+- (UIToolbar *)toolbar {
     if (nil == _toolbar) {
         CGFloat height = 44;
         _toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - height, self.view.bounds.size.width, height)];
@@ -312,8 +304,7 @@
     return _toolbar;
 }
 
-- (UICollectionView *)browserCollectionView
-{
+- (UICollectionView *)browserCollectionView {
     if (nil == _browserCollectionView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.minimumInteritemSpacing = 0;
@@ -334,13 +325,11 @@
 }
 
 #pragma mark - UICollectionViewDataSource
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self.assetsDataSources count];
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     NEBrowserCell *cell = (NEBrowserCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([NEBrowserCell class]) forIndexPath:indexPath];
     
     cell.asset = [self.assetsDataSources objectAtIndex:indexPath.row];
@@ -355,32 +344,27 @@
 }
 
 #pragma mark - scrollerViewDelegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    CGFloat offsetX = scrollView.contentOffset.x;
-    CGFloat itemWidth = CGRectGetWidth(self.browserCollectionView.frame);
-    CGFloat currentPageOffset = itemWidth * self.currentIndex;
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     CGFloat offsetX = scrollView.contentOffset.x;
     CGFloat itemWidth = CGRectGetWidth(self.browserCollectionView.frame);
-    if (offsetX >= 0){
+    if (offsetX >= 0) {
         NSInteger page = offsetX / itemWidth;
         [self didScrollToPage:page];
     }
 }
 
-- (void)didScrollToPage:(NSInteger)page
-{
+- (void)didScrollToPage:(NSInteger)page {
     self.currentIndex = page;
     [self updateNavigationBarAndToolBar];
 }
 
 #pragma mark - Control Hiding / Showing
 // Fades all controls slide and fade
-- (void)setControlsHidden:(BOOL)hidden animated:(BOOL)animated{
+- (void)setControlsHidden:(BOOL)hidden animated:(BOOL)animated {
     
     // Force visible
     if (nil == self.assetsDataSources || self.assetsDataSources.count == 0)
@@ -432,10 +416,8 @@
 
 #pragma mark -- getter
 - (NEImagePickerController *)NEImagePickerController {
-    if (nil == self.navigationController
-        ||
-        NO == [self.navigationController isKindOfClass:[NEImagePickerController class]])
-    {
+    if (nil == self.navigationController ||
+        NO == [self.navigationController isKindOfClass:[NEImagePickerController class]]) {
         NSAssert(false, @"check the navigation controller");
     }
     return (NEImagePickerController *)self.navigationController;

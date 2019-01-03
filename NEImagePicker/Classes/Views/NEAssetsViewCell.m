@@ -120,15 +120,24 @@
     [self addConstraints:checkImageConstraintsH];
     [self addConstraints:checkImageConstraintsV];
 }
-
+- (void)setAsset:(NEAsset *)asset {
+    _asset = asset;
+    if (!asset) {
+        NSLog(@"");
+    }
+}
 
 - (void)fillWithAsset:(NEAsset *)asset isSelected:(BOOL)seleted
 {
+    if (self.asset) {
+        return;
+    }
     self.isSelected = seleted;
     self.asset = asset;
     __weak typeof(self) weakself = self;
     if (asset.image) {
         self.imageView.image = asset.image;
+        [self setAsset:nil];
     } else {
         [asset fetchImageFull:NEImagePickerImaageSizeThumb complete:^(UIImage *image) {
             if (image) {
@@ -137,6 +146,7 @@
             } else {
                 weakself.imageView.image = [UIImage imageNamed:@"assets_placeholder_picture"];
             }
+            [weakself setAsset:nil];
         }];
     }
 }

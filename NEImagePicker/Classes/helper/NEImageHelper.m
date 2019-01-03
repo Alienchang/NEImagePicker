@@ -6,12 +6,14 @@
 #import "NEImageHelper.h"
 
 @implementation NEImageHelper
+
 + (NEAlbum *)generateAlbumWithAssetCollection:(PHAssetCollection *)assetCollection {
     NEAlbum *album = [NEAlbum new];
     [album setLocalIdentifier:assetCollection.localIdentifier];
     [album setImagesCout:assetCollection.estimatedAssetCount];
     return album;
 }
+
 + (void)getAlbumList:(void (^)(NSArray<NEAlbum *> *albums))complete
         includeEmpty:(BOOL)includeEmpty {
     [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
@@ -41,7 +43,7 @@
                         [NEImageHelper getImageWithAsset:asset targetSize:CGSizeMake(64 * 2, 64 * 2) complete:^(UIImage *image) {
                             [album setAlbumImage:image];
                             [album setAlbumTitle:assetCollection.localizedTitle];
-//                            PHAssetCollectionSubtypeAlbumCloudShared   icloud
+                            // PHAssetCollectionSubtypeAlbumCloudShared   icloud
                             // 要删除『AlbumRecentlyRemoved』的相册，RecentlyRemoved的subType是1000000201
                             if (assetCollection.assetCollectionSubtype == 1000000201) {
                                 hadAlbumRecentlyRemoved = YES;
@@ -65,9 +67,6 @@
 }
 
 + (void)getAlbumList:(void(^)(PHFetchResult <PHCollection *>*albumList))complete {
-    
-//    PHFetchOptions *fetchOptions = [PHFetchOptions new];
-//    fetchOptions.predicate = [NSPredicate predicateWithFormat:@"(assetCollectionSubtype != %d)", PHAssetCollectionSubtypeAlbumCloudShared]
     PHFetchResult *result = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
     complete?complete(result):nil;
 }
@@ -89,23 +88,25 @@
     PHImageManager *imageManager = [PHImageManager defaultManager];
 
     PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+    [options setSynchronous:YES];
     options.resizeMode = PHImageRequestOptionsResizeModeExact;
     options.deliveryMode = PHImageRequestOptionsDeliveryModeOpportunistic;
     if ([NSThread isMainThread]) {
-        [imageManager requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeAspectFill options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-            if ([[info valueForKey:@"PHImageResultIsDegradedKey"] integerValue] == 0){
+        [imageManager requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeAspectFit options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+            if ([[info valueForKey:PHImageResultIsDegradedKey] integerValue] == 0){
                 complete?complete(result):nil;
             }
         }];
     } else {
+        ///不在主线程调用可能不回调
         dispatch_async(dispatch_get_main_queue(), ^{
-            ///不在主线程调用可能不回调
-            [imageManager requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeAspectFill options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-                if ([[info valueForKey:@"PHImageResultIsDegradedKey"] integerValue] == 0){
+            [imageManager requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeAspectFit options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+                if ([[info valueForKey:PHImageResultIsDegradedKey] integerValue] == 0){
                     complete?complete(result):nil;
                 }
             }];
         });
+        
     }
 }
 
@@ -125,6 +126,42 @@
 
 + (void)jumpToSetting {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+}
+
++ (NEAsset *)lastVideoAsset {
+    return nil;
+}
++ (void)lastVideoCover:(void(^)(UIImage *cover))complete {
+    PHFetchOptions *options = [PHFetchOptions new];
+    options.predicate = [NSPredicate predicateWithFormat:@"mediaType = %d",PHAssetMediaTypeVideo];
+    options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]];
+    PHFetchResult *assetsFetchResults = [PHAsset fetchAssetsWithOptions:options];
+    PHAsset *lasetAsset = assetsFetchResults.firstObject;
+    if (lasetAsset.mediaType == PHAssetMediaTypeVideo) {
+            PHVideoRequestOptions *options = [[PHVideoRequestOptions alloc] init];
+            options.version = PHImageRequestOptionsVersionCurrent;
+            options.deliveryMode = PHVideoRequestOptionsDeliveryModeAutomatic;
+            PHImageManager *manager = [PHImageManager defaultManager];
+            [manager requestAVAssetForVideo:lasetAsset options:options resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
+                AVURLAsset *urlAsset = (AVURLAsset *)asset;
+                UIImage *cover = [self imageOfVideoAsset:urlAsset];
+                if (complete) {
+                    complete(cover);
+                }
+            }];
+        }
+}
+
++ (UIImage *)imageOfVideoAsset:(AVAsset *)videoAsset {
+    AVAssetImageGenerator *imageGenerator = [AVAssetImageGenerator assetImageGeneratorWithAsset:videoAsset];
+    NSError *error = nil;
+    CMTime actucalTime = CMTimeMake(1, 1);
+    CGImageRef cgImage = [imageGenerator copyCGImageAtTime:actucalTime actualTime:&actucalTime error:&error];
+    if (error) { NSLog(@"截取视频图片失败:%@", error.localizedDescription); return nil;}
+    CMTimeShow(actucalTime);
+    UIImage *image = [UIImage imageWithCGImage:cgImage];
+    CGImageRelease(cgImage);
+    return image;
 }
 
 @end

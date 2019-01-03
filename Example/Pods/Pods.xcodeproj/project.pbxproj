@@ -7,70 +7,301 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		113CE445F4DA96CBE9CF04B76898EF0B /* Pods-NEImagePicker_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE6404D8D4FE0201E2FC961B158466A /* Pods-NEImagePicker_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		19B28984BF21AAF309D2409FA1BB9E2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		4046D9189126E952BA7717147E1A3879 /* Pods-NEImagePicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E138DEBD024130133793D3A9BF0A4B66 /* Pods-NEImagePicker_Example-dummy.m */; };
-		7534F26A3CFA71E681F19CB7E26F7161 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		03A54BE3CAE1D7E30408B1D3425FC401 /* TOCropViewControllerTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = C58DA104DBE8014188A20B6DF3BC2FB6 /* TOCropViewControllerTransitioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0456A5F076C9C58C0F88A6CCBC4F25A1 /* NESendButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F06292701C1E145806D02FE1AFBF6E59 /* NESendButton.m */; };
+		04BCDC052A9BA7145958325C94DEE462 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F284375B253A7EA5C7BB73AB67E139AD /* Foundation.framework */; };
+		0BAD52C766A325C7851A3FBA63B7A578 /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 407238E839AF909469E16347588C2151 /* UIImage+FixOrientation.m */; };
+		0FBCE5CB214D6D70F9959811E576A2E2 /* NEFullImageButton.h in Headers */ = {isa = PBXBuildFile; fileRef = CB6366456A75261A066FAF91C79BD953 /* NEFullImageButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		117610D8A7DFAC90F18B024C413D6DA7 /* UIImage+NEImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E689F09BFD21FD750EF50F42E616E8E /* UIImage+NEImagePicker.m */; };
+		1619B05CD29EAF746FBA4C6E06E13E09 /* UIImage+FixOrientation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D61CAA4CA25C42BB4F0AE664E72B44B /* UIImage+FixOrientation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		162BC27569837F58288786998DD3239B /* pl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 7AA6B736FDEA253709E215218EA2017D /* pl.lproj */; };
+		1E270C98C619B5A4BE4AA6B887B8510F /* NEBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EBD0A4257CD09F2C096B1855A4E783 /* NEBrowserCell.m */; };
+		22EFEC1D5A14E909E6E1A9F95370D818 /* UIImage+CropRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91E3D646B2D8E3973E401855CD08B6 /* UIImage+CropRotate.m */; };
+		2582A20BACC9878FB228A6A8D26F97D3 /* TOCropToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 545929CE747B209F78E5E72EBC2E024F /* TOCropToolbar.m */; };
+		2D8FC9142D9B3861EC9DCFE15748728B /* NEImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F558E6C72F2CC7931CDAB156FE23E372 /* NEImagePickerController.m */; };
+		30FBED4E186180E8843E7C6B298CCC82 /* TOCropViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4ECF574D8C36FAE49C5B4A0F38051A /* TOCropViewController-dummy.m */; };
+		34197C5A385027494FCD7148656ADF21 /* TOCropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120A68D11E5E5B0D52B3B8E7F2276A3F /* TOCropViewController.framework */; };
+		35C23E03C399E9763FC6DD2AEF2E15CD /* vi.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 0BEEA0559979A158E1F158D2867081AF /* vi.lproj */; };
+		360DB82CB692B8FA2E555E7C3E100A56 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 670FC11D738A64E357F92D560F3A519A /* es.lproj */; };
+		36136090B3C7DDF9277F392BEF853A1F /* NEAlbumTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 30E89B3691C3602D26C4CD82B86601A7 /* NEAlbumTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A1613AE4C0A0C6ABF7FB355114A4197 /* UIImage+Common.h in Headers */ = {isa = PBXBuildFile; fileRef = C44524AFAA71F7DADDDA13BE13511FBC /* UIImage+Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A9E06FE69FE6448B5A026C2FCED491A /* TOCropViewConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = BEEECA8E667257BEF79960A337EF7E34 /* TOCropViewConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BE803D68191053831CE2BA3FC7C9906 /* NEImageFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FE3AF109C8C969A62FCD5427D61A9D /* NEImageFlowViewController.m */; };
+		3D275D2FCE6C5E6E209A7A5D22E1175A /* NECropViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = E3B0D908E39796B3D663FF8544CAD8DD /* NECropViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E3DBD6ACC45A8B1D03AA2577766D1A0 /* TOCropScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D8DE907373A21B79284054F2E991EC /* TOCropScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E755285DDE783FE261ED367D3D025AC /* NEAlbum.h in Headers */ = {isa = PBXBuildFile; fileRef = 368DBD3DD61DA1C097B65C9C26339806 /* NEAlbum.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		404876321F55A2888E18678A003A55D7 /* TOCropViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6431F38CA470C985302D70FF104B133E /* TOCropViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		404C4C8C91015C7AA1FCC3712712BD9C /* UIImagePickerController+Fixed.h in Headers */ = {isa = PBXBuildFile; fileRef = 5269A07C08CB1B4D9B55042971BB66CE /* UIImagePickerController+Fixed.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		411DB261640B6C92910723E7FA6EF711 /* UIImage+NEImagePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = D60ACE3EF204675FAAF6FC56A9373CDA /* UIImage+NEImagePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4137C658900B6CE5D41CE1612E4F066F /* UIViewController+NEImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D27E0F6F673C4F2C6DAD9D03404798 /* UIViewController+NEImagePicker.m */; };
+		436A8E44AFA6E9302E1C3031E05E91F6 /* NEAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A926B00B45E3CD5164E99333790FD0A6 /* NEAlbumTableViewController.m */; };
+		43A1353B847F918E5FAE1A948088F4EB /* NEImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8E3F3E1337E03CFB52A5A5BCD16D66 /* NEImageHelper.m */; };
+		446735FB95B42FA236C06FC5B1A6F8E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F284375B253A7EA5C7BB73AB67E139AD /* Foundation.framework */; };
+		46AA36F8FAE573569FC435E67CC27476 /* NETakePhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1FF0490E7D4E6A46DD988FEF3FB820 /* NETakePhotoController.m */; };
+		48676C4A155B6A31E2B4DA8752D936AB /* Pods-NEImagePicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E138DEBD024130133793D3A9BF0A4B66 /* Pods-NEImagePicker_Example-dummy.m */; };
+		49CBD30B5477A8A68039F8ECBE3BD761 /* NEAsset.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C08CC081AA05F3DB7F887BDDAAE06C8 /* NEAsset.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BE057725515645C605214AEC73F33AC /* NEImageFlowViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = E82D1B45B55F8D0C609C63023AA7EC72 /* NEImageFlowViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E679C7E691A2B0D37084C1FC728910C /* PHAsset+Select.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A0AE521046554A5B762EA245CEBC4A4 /* PHAsset+Select.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5210B99D1380B7E2673B2C6323049079 /* NECameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = F512D5639F4423C02EA5103DECAEDF77 /* NECameraController.m */; };
+		5493C2D8A6FBFB592E09111543099A27 /* TOCroppedImageAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CD9186928EC470B40DDCD7DDF0F376 /* TOCroppedImageAttributes.m */; };
+		570C840B7BE9D6D0A606DC6DC4ECBDE1 /* ro.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DEEB71B43230DDD55D4243271CC72E2A /* ro.lproj */; };
+		599BAF4880EF74DC4329BEEF095D4CCA /* NEPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B66FF253BC7F1E37AA909380E61EFB8 /* NEPhotoBrowser.m */; };
+		59CBD150301DE66B7409993FDDB7D137 /* TOCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE74C6BB315A4021567C3080CA6F0001 /* TOCropOverlayView.m */; };
+		5D4B60917A44FFA958C33E32EBB0054F /* NEAssetsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EFDFBA601745E9D9F28333232E00FE /* NEAssetsViewCell.m */; };
+		5E18E3AE6D8A61CF564825C53DBD2239 /* TOCropViewControllerBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6C97AF5C6774BCC2458FC4D27346F336 /* TOCropViewControllerBundle.bundle */; };
+		60F3F15B730A7605BDDDF618CC5C8C04 /* hu.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 574359D2BB21C3929885A17FCC67A5A2 /* hu.lproj */; };
+		61922BFD465737F792E640D8555BB975 /* Pods-NEImagePicker_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE6404D8D4FE0201E2FC961B158466A /* Pods-NEImagePicker_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		655DF6923FAD0CC4B83CB330CC1FF9DE /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CB1E3A6511E30541396AE52EC02936 /* UIColor+Hex.m */; };
+		66683B1B923C44C89F6A9264F8FC87F8 /* ja.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 61F7EB323CB83CB35BC90A788AC7D26B /* ja.lproj */; };
+		695EA79F28F1E0D0C3F39D63B5F78650 /* NETakePhotoController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDB754CC89F8BC2C97451BE04A6F83B /* NETakePhotoController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D18F1964F677B4C54F37711B2FA1655 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F284375B253A7EA5C7BB73AB67E139AD /* Foundation.framework */; };
+		6F0DBB32F74FD19675ED9CB2407746C8 /* UIImagePickerController+Fixed.m in Sources */ = {isa = PBXBuildFile; fileRef = E0300389622B10F69A7610B117EFD4D7 /* UIImagePickerController+Fixed.m */; };
+		73E568BB3DCC45C64F09160EBA2D1846 /* NEAssetsViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 58396A0352575B744F508F01033E3A97 /* NEAssetsViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		743065A94BB9FEDC1AAE531A3C5BCAAD /* TOCroppedImageAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F9DC3EBDF4D7C58547792836F3A5146 /* TOCroppedImageAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C86AA8A172070CEAFD381F4A91A1C69 /* UIImage+CropRotate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D530BBA421EA75F5288FD24CD3F6F62 /* UIImage+CropRotate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		823CA28D93FCA28B5694725EED4F9F61 /* NETapDetectingImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 81C913A7E820C4549B65971D495B53A4 /* NETapDetectingImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82426F0E4C931262A6CB398EB79A7BB1 /* ru.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 2A129C1F52B043ABE67C6934BE87045E /* ru.lproj */; };
+		82A056B61F47BDC0B2FAD59D22CAF253 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 6B6E27BF090E419DBDD7620C6C64F4CA /* en.lproj */; };
+		83C5DAEF308E96249B41C73B3270E350 /* TOCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20787E1A7568E30159DA76F04A608083 /* TOCropViewController.m */; };
+		8507CC533DA10DA633DC2DC6F2F3E52C /* NEPhotoBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 18B63A2D9421F157798A588BB0BF7329 /* NEPhotoBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86613E913BB767D7DFFCD0C8BF08716A /* PHAsset+Select.m in Sources */ = {isa = PBXBuildFile; fileRef = 526D3C57139816D99B8CF084821AC08B /* PHAsset+Select.m */; };
+		877E32A89CEA8EADFF4D742C6CC6C812 /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 2735FE4E50B9BDAF6054B640514B85AC /* nl.lproj */; };
+		8DA32812C99181BF247081D88C76C5D0 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C1B7005726AB12510287385791601A13 /* it.lproj */; };
+		8E6B4524EC82F4F9B49BA0FFDCEACBB8 /* ms.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A05D0A53BAAB51788A3019D3AB044C04 /* ms.lproj */; };
 		90887EC265F6D1969712402EEF7C4D11 /* Pods-NEImagePicker_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A69AF80933AD93388EA9F7E542270FDD /* Pods-NEImagePicker_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E0196EEA8A77DDA58DAAF257094C54FC /* NEImagePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5541AF4BD49C62F026DC576D5D2D15DE /* NEImagePicker-dummy.m */; };
+		92744F131AB8BBA2C9632F909DC6B087 /* UIViewController+NEImagePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = E41AD2D73A086D0D4F68CB798194469A /* UIViewController+NEImagePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9380B0F922312E2C39A3BAEB6D5B29C1 /* UIView+NEImagePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 281F5594F3E909BEEC751E3F8145DBF4 /* UIView+NEImagePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95ACF4BA7B5729B6730464D646F7DF41 /* NEImagePicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8995A7C0C4A1BA2E197E8369D47FC05A /* NEImagePicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		96DE0DBF7600F629ABF832FFCB61F8B9 /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = B8B77125162065662CD67B43A9C7D26E /* zh-Hans.lproj */; };
+		973F4FAD7064D4E89D1FDCF3E01EB97B /* NECameraController+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF3A28960E00C6061045301104DF924 /* NECameraController+Helper.m */; };
+		9D90A06D57728455C2EF2ED2C694AFE2 /* NEImagePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0729B6610E5D972D7F6C76D645726BD4 /* NEImagePicker-dummy.m */; };
+		A03EA9C6BDD63842D946D837388BD4D3 /* UIView+NEImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 76AF8FA0DC5303A7F486B2864554D14E /* UIView+NEImagePicker.m */; };
+		A191868260440293FBE54809FF37E7B4 /* UIColor+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CA761DD65C25AA8D03891EEDA989ED8 /* UIColor+Hex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1C9630069A9500345A8B9082F1A0641 /* TOCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FDD0F6E0E71815A97B3173ABDB7030 /* TOCropView.m */; };
+		A2953BDB210297909177E6F464DFE73F /* NEImagePickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = FF708E67560A0BB048640E567749839F /* NEImagePickerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4515C6594A0621EAA25833CA09CE6C1 /* da-DK.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4510D323980F5CD120079F1A8C064646 /* da-DK.lproj */; };
+		A9B7EF0C726A6479E5357B2637076716 /* id.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1A7DA80AAE165F094BDF0DA2F4E12383 /* id.lproj */; };
+		A9F6A22A9442F6D4FE2C712303471DA7 /* NECropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B80FE6957CB090EA5992877762E499E /* NECropViewController.m */; };
+		AEF47BB738A9BE708259E7F562F9A141 /* NEUnAuthorizedTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B17C7A5B477AF7D3B670E924D775EE8D /* NEUnAuthorizedTipsView.m */; };
+		AFB1CA6D7A15FFDE2CC0C8ADDB8BD42F /* ar.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 9C584122788F523138D8BABE1D13EF9B /* ar.lproj */; };
+		AFDB193BD551010DBCBD476D79069C1E /* NEAlbumTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 746918A7CFD6D213DBF2903C9527F4F5 /* NEAlbumTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B21377AA0E4DFFD70AC4064A787F0395 /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 79410867C6132795A5147CAF4EE88345 /* de.lproj */; };
+		B80E8C617F10A8A2DA2CCC59AAEB6BF0 /* NESendButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DE9F1C1B0A400E00D3F15A5342C7C77 /* NESendButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF20FAAE8E51FDEF0588DE1F73C8703E /* NSURL+NEIMagePickerUrlEqual.h in Headers */ = {isa = PBXBuildFile; fileRef = 9005680874C0F5575912E546CD691782 /* NSURL+NEIMagePickerUrlEqual.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C64312D21521C94293F77DD32C249C17 /* NEImagePickerSourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F994152295F03BE1F0D430A341F4D5 /* NEImagePickerSourceConfig.m */; };
+		C786D8799349D1A4D062CAA1EFDE6A3C /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 2FA4BE2A5769BFAC84F66FBFD0C2BB0D /* fr.lproj */; };
+		C9C761564788A0E59E842662CE890966 /* ko.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 94DE98AC546EE9CB4FFFD0173765BEDD /* ko.lproj */; };
+		CAFCA816D29799CB9B37E8B412266414 /* tr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 20450D7D5DBC2D4D6C81C27BA332906B /* tr.lproj */; };
+		CB3E77BB04423B1AD941F86CD03BA743 /* zh-Hant.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E9131C1EDA938A267319D29A71BB3 /* zh-Hant.lproj */; };
+		CC549EE065BAA9501319D8463F938753 /* NEImagePickerSourceConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 73946173B03085AE407CF15D30EF8F1F /* NEImagePickerSourceConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD0B0EFCAFB437FC17E03E3203C860E7 /* TOCropViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4610FC42013866A3FE3ADD6B0F09E05F /* TOCropViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDC9B8F9C4909D4713C39F5C8C383654 /* TOCropView.h in Headers */ = {isa = PBXBuildFile; fileRef = 599A72526B7318543D8111F8D8DB1CD1 /* TOCropView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE21A1A9CFD80CFC491EC30361B77B94 /* TOActivityCroppedImageProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = EBBA8AB6629C35F797CE10D4A45E5EDF /* TOActivityCroppedImageProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF5058FB0311EAA52B6E0808575029D9 /* NECameraController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FCA204E777911A9F0231BC1254FDB29 /* NECameraController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2233935B193C43B6031BC5CBE4C4B9D /* TOCropScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1017E6D7DDE86A0A3FD7FB0C1E95328 /* TOCropScrollView.m */; };
+		D34F4F251602B9139A0ABC0E3730296C /* NEFullImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA20DE76A05EDC0613903AFD872BEE6 /* NEFullImageButton.m */; };
+		D895B7ACBB7FF2206DDAF1E3AC0CEB42 /* TOCropOverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = CC65CD7A3160F764FF80CB2A24FE42CC /* TOCropOverlayView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA88F4D03807C4866CDAE53A7E1C65AA /* NEAlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45434DD9E88313ED1504291C94D800EE /* NEAlbumTableViewCell.m */; };
+		DA8AFE69F5BA7C0820CD0E68A84BB76C /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 23A00E2A7A5216ADE87B5D5F8D536F09 /* Base.lproj */; };
+		DA9AF83E0DBB80959BA3C048E8548B37 /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = F1014D76DC74FA1C78C3F08F954813F8 /* pt.lproj */; };
+		DAF048E445D7D0BD097308DFEA8A1DDD /* TOActivityCroppedImageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 19768C1AB557DF186E6670477DFFD679 /* TOActivityCroppedImageProvider.m */; };
+		DC5922F1FB05A32E18080EE4DB72DC22 /* NEAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 733F956AC884225C5D42D5D32D47CEB1 /* NEAsset.m */; };
+		E05BE712DC6AD85F84C675B87F6B32D2 /* NSURL+NEIMagePickerUrlEqual.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DDA2DDC115F1EFD30241A205431A3C /* NSURL+NEIMagePickerUrlEqual.m */; };
 		EA75A45334C1471098ECE983F5B11AF8 /* Pods-NEImagePicker_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A30962B26C9442168AAD30E068AA1A0 /* Pods-NEImagePicker_Tests-dummy.m */; };
-		F7A3347C9C15100A74608EAC516D3587 /* NEImagePicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DC876B61A2D1569B67670A238C14A57 /* NEImagePicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FEA737D4C22B6F3B1885B3FFADC4C186 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		EBD6169963C57C2F42389A8C1EA1620D /* NEUnAuthorizedTipsView.h in Headers */ = {isa = PBXBuildFile; fileRef = FD1650D1C557DE777ACEBF5522777EA1 /* NEUnAuthorizedTipsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED33F0207418BE32CD9DBEA64BF44FB8 /* NECameraController+Helper.h in Headers */ = {isa = PBXBuildFile; fileRef = FB26E1EA413F31ECC1B3AC14841A3476 /* NECameraController+Helper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE229FFF47064F6E426A2CF4D26BC90D /* UIImage+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = B69B4C77257047AD441E553B3FA7AA7E /* UIImage+Common.m */; };
+		EF0A0DCA8D467C29F237DA1791EAC05D /* NEAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 147E5DD6D296577D6CEC460497DBFF13 /* NEAlbum.m */; };
+		F2C8E7D8628CA3E1FC4A7BBF1E75B1FD /* TOCropViewControllerTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BBDF5323C8188F0C728D2CDBDA64F6 /* TOCropViewControllerTransitioning.m */; };
+		F5F9BA45C513C6D8154493B85E154BA1 /* NEImageHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = F7D4C06B3CA0A8AD3580DE6CE3A6D493 /* NEImageHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F637BF8301BD866654D3B4D303BEDE6F /* NETapDetectingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 751EA32A65ACEB695B398B095E1B3A9C /* NETapDetectingImageView.m */; };
+		F73662012FBD495106622CFD8347F63F /* NEBrowserCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BB3D7A015AE48DFFD315E22320C9803 /* NEBrowserCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEA737D4C22B6F3B1885B3FFADC4C186 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F284375B253A7EA5C7BB73AB67E139AD /* Foundation.framework */; };
+		FF88AD8A14EC7BD85DF892815470F14C /* TOCropToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A66DAC312ECD5E7789CAEDF1AF8DE8A /* TOCropToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		178066679FC151309D489D5F9BD37765 /* PBXContainerItemProxy */ = {
+		21F1C772BE1B8261B42EA9D6AA820024 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7B7722F82D1F218899D49AFFAA0718B3;
+			remoteGlobalIDString = A5FB5AF6EE797805F58DB43309474C61;
+			remoteInfo = "TOCropViewController-TOCropViewControllerBundle";
+		};
+		378FB7DD328E10A0105925EC3C3E9566 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4E7AA64DC9D727DB393A4B303B8ACCF;
+			remoteInfo = TOCropViewController;
+		};
+		A90865BD7A87EBEB90AF54614E65F9BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4E7AA64DC9D727DB393A4B303B8ACCF;
+			remoteInfo = TOCropViewController;
+		};
+		B37E3705343BB96830D5F7812CF24D49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67CDF6935218ACC157573ED941EF83FE;
 			remoteInfo = NEImagePicker;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0236586922E6738CBA8976FDDC0F0C71 /* Pods_NEImagePicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEImagePicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1251062742C4D39D2362608E48F19B53 /* Pods_NEImagePicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEImagePicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06CD9186928EC470B40DDCD7DDF0F376 /* TOCroppedImageAttributes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCroppedImageAttributes.m; path = "Objective-C/TOCropViewController/Models/TOCroppedImageAttributes.m"; sourceTree = "<group>"; };
+		0729B6610E5D972D7F6C76D645726BD4 /* NEImagePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NEImagePicker-dummy.m"; sourceTree = "<group>"; };
+		0BEEA0559979A158E1F158D2867081AF /* vi.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = vi.lproj; path = "Objective-C/TOCropViewController/Resources/vi.lproj"; sourceTree = "<group>"; };
+		0C89149CCF137E117A1A490CE92D3CCB /* TOCropViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TOCropViewController-prefix.pch"; sourceTree = "<group>"; };
+		0DDB754CC89F8BC2C97451BE04A6F83B /* NETakePhotoController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NETakePhotoController.h; sourceTree = "<group>"; };
+		117D6AE0DD396A4BB4B1EA8E57C301E6 /* TOCropViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TOCropViewController.framework; path = TOCropViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		120A68D11E5E5B0D52B3B8E7F2276A3F /* TOCropViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TOCropViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12AC0D763ADA621AB130EDB7277BF9ED /* NEImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NEImagePicker.framework; path = NEImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		147E5DD6D296577D6CEC460497DBFF13 /* NEAlbum.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NEAlbum.m; path = NEImagePicker/Classes/NEAlbum.m; sourceTree = "<group>"; };
+		18B63A2D9421F157798A588BB0BF7329 /* NEPhotoBrowser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NEPhotoBrowser.h; path = NEImagePicker/Classes/NEPhotoBrowser.h; sourceTree = "<group>"; };
+		19768C1AB557DF186E6670477DFFD679 /* TOActivityCroppedImageProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOActivityCroppedImageProvider.m; path = "Objective-C/TOCropViewController/Models/TOActivityCroppedImageProvider.m"; sourceTree = "<group>"; };
+		1A66DAC312ECD5E7789CAEDF1AF8DE8A /* TOCropToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropToolbar.h; path = "Objective-C/TOCropViewController/Views/TOCropToolbar.h"; sourceTree = "<group>"; };
+		1A7DA80AAE165F094BDF0DA2F4E12383 /* id.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = id.lproj; path = "Objective-C/TOCropViewController/Resources/id.lproj"; sourceTree = "<group>"; };
+		1DE9F1C1B0A400E00D3F15A5342C7C77 /* NESendButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NESendButton.h; sourceTree = "<group>"; };
+		1FF7EC9E59D47DC6221BB49F80E55618 /* NEImagePicker.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = NEImagePicker.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		20450D7D5DBC2D4D6C81C27BA332906B /* tr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = tr.lproj; path = "Objective-C/TOCropViewController/Resources/tr.lproj"; sourceTree = "<group>"; };
+		20787E1A7568E30159DA76F04A608083 /* TOCropViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropViewController.m; path = "Objective-C/TOCropViewController/TOCropViewController.m"; sourceTree = "<group>"; };
 		209C8AFBDA48ECE8E3D23A160E575545 /* Pods-NEImagePicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NEImagePicker_Example.modulemap"; sourceTree = "<group>"; };
-		29C49A6EAF30DD13F556D24E691511F9 /* NEImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NEImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21FE3AF109C8C969A62FCD5427D61A9D /* NEImageFlowViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NEImageFlowViewController.m; path = NEImagePicker/Classes/NEImageFlowViewController.m; sourceTree = "<group>"; };
+		22CB1E3A6511E30541396AE52EC02936 /* UIColor+Hex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		23A00E2A7A5216ADE87B5D5F8D536F09 /* Base.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = Base.lproj; path = "Objective-C/TOCropViewController/Resources/Base.lproj"; sourceTree = "<group>"; };
+		26D8DE907373A21B79284054F2E991EC /* TOCropScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropScrollView.h; path = "Objective-C/TOCropViewController/Views/TOCropScrollView.h"; sourceTree = "<group>"; };
+		26EBD0A4257CD09F2C096B1855A4E783 /* NEBrowserCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NEBrowserCell.m; sourceTree = "<group>"; };
+		2735FE4E50B9BDAF6054B640514B85AC /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = nl.lproj; path = "Objective-C/TOCropViewController/Resources/nl.lproj"; sourceTree = "<group>"; };
+		281F5594F3E909BEEC751E3F8145DBF4 /* UIView+NEImagePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+NEImagePicker.h"; sourceTree = "<group>"; };
+		2A129C1F52B043ABE67C6934BE87045E /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ru.lproj; path = "Objective-C/TOCropViewController/Resources/ru.lproj"; sourceTree = "<group>"; };
+		2FA4BE2A5769BFAC84F66FBFD0C2BB0D /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = fr.lproj; path = "Objective-C/TOCropViewController/Resources/fr.lproj"; sourceTree = "<group>"; };
+		30E89B3691C3602D26C4CD82B86601A7 /* NEAlbumTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NEAlbumTableViewController.h; path = NEImagePicker/Classes/NEAlbumTableViewController.h; sourceTree = "<group>"; };
+		368DBD3DD61DA1C097B65C9C26339806 /* NEAlbum.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NEAlbum.h; path = NEImagePicker/Classes/NEAlbum.h; sourceTree = "<group>"; };
 		387EAC19A8E6CED5ACBB2819D075811F /* Pods-NEImagePicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NEImagePicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		3DC876B61A2D1569B67670A238C14A57 /* NEImagePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NEImagePicker-umbrella.h"; sourceTree = "<group>"; };
-		488E454CC3E104DF49A0EE193E7B466F /* NEImagePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NEImagePicker.modulemap; sourceTree = "<group>"; };
+		38D84950CF9DB3A42D8A5F22FC61A0F9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AB5E70F0242C4FA2B3EDE578D70CD6C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CA761DD65C25AA8D03891EEDA989ED8 /* UIColor+Hex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		3F9DC3EBDF4D7C58547792836F3A5146 /* TOCroppedImageAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCroppedImageAttributes.h; path = "Objective-C/TOCropViewController/Models/TOCroppedImageAttributes.h"; sourceTree = "<group>"; };
+		407238E839AF909469E16347588C2151 /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FixOrientation.m"; sourceTree = "<group>"; };
+		4510D323980F5CD120079F1A8C064646 /* da-DK.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "da-DK.lproj"; path = "Objective-C/TOCropViewController/Resources/da-DK.lproj"; sourceTree = "<group>"; };
+		45434DD9E88313ED1504291C94D800EE /* NEAlbumTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NEAlbumTableViewCell.m; sourceTree = "<group>"; };
+		4610FC42013866A3FE3ADD6B0F09E05F /* TOCropViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TOCropViewController-umbrella.h"; sourceTree = "<group>"; };
+		47C9B4463AB4CD85B3774B56853D5309 /* TOCropViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TOCropViewController.xcconfig; sourceTree = "<group>"; };
 		4987E1EE0742ADBDFD2C3AA34480C729 /* Pods-NEImagePicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NEImagePicker_Tests.modulemap"; sourceTree = "<group>"; };
+		4C08CC081AA05F3DB7F887BDDAAE06C8 /* NEAsset.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NEAsset.h; path = NEImagePicker/Classes/NEAsset.h; sourceTree = "<group>"; };
+		4C466020DBFEAB5AC3336208A3179B78 /* NEImagePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NEImagePicker.xcconfig; sourceTree = "<group>"; };
 		4ECDFC7E72D55ECEC90203CF7BE0ECE7 /* Pods-NEImagePicker_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NEImagePicker_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5541AF4BD49C62F026DC576D5D2D15DE /* NEImagePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NEImagePicker-dummy.m"; sourceTree = "<group>"; };
-		582CCA8B586264A06A5FFB6B3D43B0AB /* NEImagePicker.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = NEImagePicker.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4F91E3D646B2D8E3973E401855CD08B6 /* UIImage+CropRotate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+CropRotate.m"; path = "Objective-C/TOCropViewController/Categories/UIImage+CropRotate.m"; sourceTree = "<group>"; };
+		51F994152295F03BE1F0D430A341F4D5 /* NEImagePickerSourceConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NEImagePickerSourceConfig.m; path = NEImagePicker/Classes/NEImagePickerSourceConfig.m; sourceTree = "<group>"; };
+		5269A07C08CB1B4D9B55042971BB66CE /* UIImagePickerController+Fixed.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImagePickerController+Fixed.h"; sourceTree = "<group>"; };
+		526D3C57139816D99B8CF084821AC08B /* PHAsset+Select.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PHAsset+Select.m"; sourceTree = "<group>"; };
+		545929CE747B209F78E5E72EBC2E024F /* TOCropToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropToolbar.m; path = "Objective-C/TOCropViewController/Views/TOCropToolbar.m"; sourceTree = "<group>"; };
+		574359D2BB21C3929885A17FCC67A5A2 /* hu.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = hu.lproj; path = "Objective-C/TOCropViewController/Resources/hu.lproj"; sourceTree = "<group>"; };
+		58396A0352575B744F508F01033E3A97 /* NEAssetsViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NEAssetsViewCell.h; sourceTree = "<group>"; };
+		599A72526B7318543D8111F8D8DB1CD1 /* TOCropView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropView.h; path = "Objective-C/TOCropViewController/Views/TOCropView.h"; sourceTree = "<group>"; };
 		59A19F74094BC5BC32882BECA314BB2E /* Pods-NEImagePicker_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NEImagePicker_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5B8E3F3E1337E03CFB52A5A5BCD16D66 /* NEImageHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NEImageHelper.m; sourceTree = "<group>"; };
+		61F7EB323CB83CB35BC90A788AC7D26B /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ja.lproj; path = "Objective-C/TOCropViewController/Resources/ja.lproj"; sourceTree = "<group>"; };
+		6431F38CA470C985302D70FF104B133E /* TOCropViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropViewController.h; path = "Objective-C/TOCropViewController/TOCropViewController.h"; sourceTree = "<group>"; };
+		670FC11D738A64E357F92D560F3A519A /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = es.lproj; path = "Objective-C/TOCropViewController/Resources/es.lproj"; sourceTree = "<group>"; };
 		696DCFDB60C7C16949EAEDA34634A8A8 /* Pods-NEImagePicker_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NEImagePicker_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		6AA20DE76A05EDC0613903AFD872BEE6 /* NEFullImageButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NEFullImageButton.m; sourceTree = "<group>"; };
+		6B66FF253BC7F1E37AA909380E61EFB8 /* NEPhotoBrowser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NEPhotoBrowser.m; path = NEImagePicker/Classes/NEPhotoBrowser.m; sourceTree = "<group>"; };
+		6B6E27BF090E419DBDD7620C6C64F4CA /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = "Objective-C/TOCropViewController/Resources/en.lproj"; sourceTree = "<group>"; };
+		6C97AF5C6774BCC2458FC4D27346F336 /* TOCropViewControllerBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TOCropViewControllerBundle.bundle; path = "TOCropViewController-TOCropViewControllerBundle.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7209275935EC6BAECA7456E5E9CE63DF /* Pods-NEImagePicker_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NEImagePicker_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		72F2D02B5B0182B7F78372176E9C3681 /* Pods_NEImagePicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NEImagePicker_Tests.framework; path = "Pods-NEImagePicker_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		733F956AC884225C5D42D5D32D47CEB1 /* NEAsset.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NEAsset.m; path = NEImagePicker/Classes/NEAsset.m; sourceTree = "<group>"; };
+		73946173B03085AE407CF15D30EF8F1F /* NEImagePickerSourceConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NEImagePickerSourceConfig.h; path = NEImagePicker/Classes/NEImagePickerSourceConfig.h; sourceTree = "<group>"; };
+		746918A7CFD6D213DBF2903C9527F4F5 /* NEAlbumTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NEAlbumTableViewCell.h; sourceTree = "<group>"; };
+		751EA32A65ACEB695B398B095E1B3A9C /* NETapDetectingImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NETapDetectingImageView.m; sourceTree = "<group>"; };
+		76AF8FA0DC5303A7F486B2864554D14E /* UIView+NEImagePicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+NEImagePicker.m"; sourceTree = "<group>"; };
+		76D27E0F6F673C4F2C6DAD9D03404798 /* UIViewController+NEImagePicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NEImagePicker.m"; sourceTree = "<group>"; };
 		77238D9739BD119C0257591858077BE7 /* Pods-NEImagePicker_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NEImagePicker_Tests-resources.sh"; sourceTree = "<group>"; };
+		79410867C6132795A5147CAF4EE88345 /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = de.lproj; path = "Objective-C/TOCropViewController/Resources/de.lproj"; sourceTree = "<group>"; };
+		7AA6B736FDEA253709E215218EA2017D /* pl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = pl.lproj; path = "Objective-C/TOCropViewController/Resources/pl.lproj"; sourceTree = "<group>"; };
+		7B80FE6957CB090EA5992877762E499E /* NECropViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NECropViewController.m; sourceTree = "<group>"; };
+		7F3E9131C1EDA938A267319D29A71BB3 /* zh-Hant.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "zh-Hant.lproj"; path = "Objective-C/TOCropViewController/Resources/zh-Hant.lproj"; sourceTree = "<group>"; };
+		81C913A7E820C4549B65971D495B53A4 /* NETapDetectingImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NETapDetectingImageView.h; sourceTree = "<group>"; };
+		82DDA2DDC115F1EFD30241A205431A3C /* NSURL+NEIMagePickerUrlEqual.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSURL+NEIMagePickerUrlEqual.m"; sourceTree = "<group>"; };
+		88FDD0F6E0E71815A97B3173ABDB7030 /* TOCropView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropView.m; path = "Objective-C/TOCropViewController/Views/TOCropView.m"; sourceTree = "<group>"; };
+		8995A7C0C4A1BA2E197E8369D47FC05A /* NEImagePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NEImagePicker-umbrella.h"; sourceTree = "<group>"; };
 		8A30962B26C9442168AAD30E068AA1A0 /* Pods-NEImagePicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NEImagePicker_Tests-dummy.m"; sourceTree = "<group>"; };
+		8B1FF0490E7D4E6A46DD988FEF3FB820 /* NETakePhotoController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NETakePhotoController.m; sourceTree = "<group>"; };
+		8BB3D7A015AE48DFFD315E22320C9803 /* NEBrowserCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NEBrowserCell.h; sourceTree = "<group>"; };
 		8D3C3FF8ECBBFE745147AA10BB55809A /* Pods-NEImagePicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NEImagePicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8D530BBA421EA75F5288FD24CD3F6F62 /* UIImage+CropRotate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+CropRotate.h"; path = "Objective-C/TOCropViewController/Categories/UIImage+CropRotate.h"; sourceTree = "<group>"; };
+		8E689F09BFD21FD750EF50F42E616E8E /* UIImage+NEImagePicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+NEImagePicker.m"; sourceTree = "<group>"; };
+		8FCA204E777911A9F0231BC1254FDB29 /* NECameraController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NECameraController.h; sourceTree = "<group>"; };
+		9005680874C0F5575912E546CD691782 /* NSURL+NEIMagePickerUrlEqual.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSURL+NEIMagePickerUrlEqual.h"; sourceTree = "<group>"; };
+		91ADE3A155452FF009B872D0DCDC6918 /* TOCropViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TOCropViewController.modulemap; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94DE98AC546EE9CB4FFFD0173765BEDD /* ko.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ko.lproj; path = "Objective-C/TOCropViewController/Resources/ko.lproj"; sourceTree = "<group>"; };
+		97C0FFE67C4AA2D479A1C6BCD57999C8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		997905E4D036B6FD8D04DB35AA8DE23B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99A2D95821281B31D23221667DC807D3 /* NEImagePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NEImagePicker.modulemap; sourceTree = "<group>"; };
+		9A0AE521046554A5B762EA245CEBC4A4 /* PHAsset+Select.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PHAsset+Select.h"; sourceTree = "<group>"; };
+		9AA94983309FD7CAA4C2855D108A8BB8 /* ResourceBundle-TOCropViewControllerBundle-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TOCropViewControllerBundle-Info.plist"; sourceTree = "<group>"; };
+		9C584122788F523138D8BABE1D13EF9B /* ar.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ar.lproj; path = "Objective-C/TOCropViewController/Resources/ar.lproj"; sourceTree = "<group>"; };
+		9D61CAA4CA25C42BB4F0AE664E72B44B /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
 		9DE6404D8D4FE0201E2FC961B158466A /* Pods-NEImagePicker_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NEImagePicker_Example-umbrella.h"; sourceTree = "<group>"; };
 		9EC0DAF0F8BEC649A6632E46AC1E67A8 /* Pods-NEImagePicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NEImagePicker_Example.release.xcconfig"; sourceTree = "<group>"; };
+		A05D0A53BAAB51788A3019D3AB044C04 /* ms.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ms.lproj; path = "Objective-C/TOCropViewController/Resources/ms.lproj"; sourceTree = "<group>"; };
 		A69AF80933AD93388EA9F7E542270FDD /* Pods-NEImagePicker_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NEImagePicker_Tests-umbrella.h"; sourceTree = "<group>"; };
 		A89A6A7FB17561DE113172192EEA01CB /* Pods-NEImagePicker_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NEImagePicker_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BE13CCA210F51ACAD55033B4343ECE5E /* NEImagePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NEImagePicker.xcconfig; sourceTree = "<group>"; };
-		CCCB58E3F9AC1E7A379F58304EFD2632 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		D226C70EF5ADAAB278A2A8848B89E19A /* NEImagePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NEImagePicker-prefix.pch"; sourceTree = "<group>"; };
+		A926B00B45E3CD5164E99333790FD0A6 /* NEAlbumTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NEAlbumTableViewController.m; path = NEImagePicker/Classes/NEAlbumTableViewController.m; sourceTree = "<group>"; };
+		AEF3A28960E00C6061045301104DF924 /* NECameraController+Helper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NECameraController+Helper.m"; sourceTree = "<group>"; };
+		B1017E6D7DDE86A0A3FD7FB0C1E95328 /* TOCropScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropScrollView.m; path = "Objective-C/TOCropViewController/Views/TOCropScrollView.m"; sourceTree = "<group>"; };
+		B17C7A5B477AF7D3B670E924D775EE8D /* NEUnAuthorizedTipsView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NEUnAuthorizedTipsView.m; sourceTree = "<group>"; };
+		B4BBDF5323C8188F0C728D2CDBDA64F6 /* TOCropViewControllerTransitioning.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropViewControllerTransitioning.m; path = "Objective-C/TOCropViewController/Models/TOCropViewControllerTransitioning.m"; sourceTree = "<group>"; };
+		B69B4C77257047AD441E553B3FA7AA7E /* UIImage+Common.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Common.m"; sourceTree = "<group>"; };
+		B8B77125162065662CD67B43A9C7D26E /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "zh-Hans.lproj"; path = "Objective-C/TOCropViewController/Resources/zh-Hans.lproj"; sourceTree = "<group>"; };
+		BE74C6BB315A4021567C3080CA6F0001 /* TOCropOverlayView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropOverlayView.m; path = "Objective-C/TOCropViewController/Views/TOCropOverlayView.m"; sourceTree = "<group>"; };
+		BEEECA8E667257BEF79960A337EF7E34 /* TOCropViewConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropViewConstants.h; path = "Objective-C/TOCropViewController/Constants/TOCropViewConstants.h"; sourceTree = "<group>"; };
+		C04E84E4BC3912BA5D2C13C2A1335BD7 /* Pods_NEImagePicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NEImagePicker_Example.framework; path = "Pods-NEImagePicker_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1B7005726AB12510287385791601A13 /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = it.lproj; path = "Objective-C/TOCropViewController/Resources/it.lproj"; sourceTree = "<group>"; };
+		C44524AFAA71F7DADDDA13BE13511FBC /* UIImage+Common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+Common.h"; sourceTree = "<group>"; };
+		C58DA104DBE8014188A20B6DF3BC2FB6 /* TOCropViewControllerTransitioning.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropViewControllerTransitioning.h; path = "Objective-C/TOCropViewController/Models/TOCropViewControllerTransitioning.h"; sourceTree = "<group>"; };
+		CB6366456A75261A066FAF91C79BD953 /* NEFullImageButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NEFullImageButton.h; sourceTree = "<group>"; };
+		CC65CD7A3160F764FF80CB2A24FE42CC /* TOCropOverlayView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropOverlayView.h; path = "Objective-C/TOCropViewController/Views/TOCropOverlayView.h"; sourceTree = "<group>"; };
+		CEB6D74AB7C2EA63ADDDE300DEAFB524 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		D60ACE3EF204675FAAF6FC56A9373CDA /* UIImage+NEImagePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+NEImagePicker.h"; sourceTree = "<group>"; };
+		DEEB71B43230DDD55D4243271CC72E2A /* ro.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ro.lproj; path = "Objective-C/TOCropViewController/Resources/ro.lproj"; sourceTree = "<group>"; };
+		E0300389622B10F69A7610B117EFD4D7 /* UIImagePickerController+Fixed.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImagePickerController+Fixed.m"; sourceTree = "<group>"; };
 		E138DEBD024130133793D3A9BF0A4B66 /* Pods-NEImagePicker_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NEImagePicker_Example-dummy.m"; sourceTree = "<group>"; };
-		E718EB5FB8E7D10C3EB9248F069FA2E5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E1EFDFBA601745E9D9F28333232E00FE /* NEAssetsViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NEAssetsViewCell.m; sourceTree = "<group>"; };
+		E3B0D908E39796B3D663FF8544CAD8DD /* NECropViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NECropViewController.h; sourceTree = "<group>"; };
+		E41AD2D73A086D0D4F68CB798194469A /* UIViewController+NEImagePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NEImagePicker.h"; sourceTree = "<group>"; };
+		E82D1B45B55F8D0C609C63023AA7EC72 /* NEImageFlowViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NEImageFlowViewController.h; path = NEImagePicker/Classes/NEImageFlowViewController.h; sourceTree = "<group>"; };
+		EBBA8AB6629C35F797CE10D4A45E5EDF /* TOActivityCroppedImageProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOActivityCroppedImageProvider.h; path = "Objective-C/TOCropViewController/Models/TOActivityCroppedImageProvider.h"; sourceTree = "<group>"; };
+		F06292701C1E145806D02FE1AFBF6E59 /* NESendButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NESendButton.m; sourceTree = "<group>"; };
+		F1014D76DC74FA1C78C3F08F954813F8 /* pt.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = pt.lproj; path = "Objective-C/TOCropViewController/Resources/pt.lproj"; sourceTree = "<group>"; };
 		F273A5A46D29CD33524229955604A0F5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F284375B253A7EA5C7BB73AB67E139AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F2B837BB8367E9F4069C9A256C85EF41 /* Pods-NEImagePicker_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NEImagePicker_Example-frameworks.sh"; sourceTree = "<group>"; };
 		F4B15D9A1A40ABC23C5C33144F37FD80 /* Pods-NEImagePicker_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NEImagePicker_Example-resources.sh"; sourceTree = "<group>"; };
+		F512D5639F4423C02EA5103DECAEDF77 /* NECameraController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NECameraController.m; sourceTree = "<group>"; };
+		F558E6C72F2CC7931CDAB156FE23E372 /* NEImagePickerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NEImagePickerController.m; path = NEImagePicker/Classes/NEImagePickerController.m; sourceTree = "<group>"; };
 		F59019CE597397C78570E104512F93ED /* Pods-NEImagePicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NEImagePicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		F955CFE05253F0B8FFE8194EFF9DDF46 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7D4C06B3CA0A8AD3580DE6CE3A6D493 /* NEImageHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NEImageHelper.h; sourceTree = "<group>"; };
+		FB26E1EA413F31ECC1B3AC14841A3476 /* NECameraController+Helper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NECameraController+Helper.h"; sourceTree = "<group>"; };
+		FB93BF5FE11557E748C26D30C02FD694 /* NEImagePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NEImagePicker-prefix.pch"; sourceTree = "<group>"; };
+		FD1650D1C557DE777ACEBF5522777EA1 /* NEUnAuthorizedTipsView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NEUnAuthorizedTipsView.h; sourceTree = "<group>"; };
+		FD4ECF574D8C36FAE49C5B4A0F38051A /* TOCropViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TOCropViewController-dummy.m"; sourceTree = "<group>"; };
+		FF708E67560A0BB048640E567749839F /* NEImagePickerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NEImagePickerController.h; path = NEImagePicker/Classes/NEImagePickerController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0442319BCF9AB38ECBC4918643DB7E74 /* Frameworks */ = {
+		11A30B1D4F1DA0727BC5C8FD48D2E6DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19B28984BF21AAF309D2409FA1BB9E2B /* Foundation.framework in Frameworks */,
+				446735FB95B42FA236C06FC5B1A6F8E6 /* Foundation.framework in Frameworks */,
+				34197C5A385027494FCD7148656ADF21 /* TOCropViewController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,35 +313,89 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2AEEA23B55DDDBC890DF657D791E734 /* Frameworks */ = {
+		4F79877C9088AFAE104FFEFFFB1AE62D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7534F26A3CFA71E681F19CB7E26F7161 /* Foundation.framework in Frameworks */,
+				6D18F1964F677B4C54F37711B2FA1655 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73B8839A3CDAEA082300BEED69B90C66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB48B7EC955CFA69EC1D82CE867EFD47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04BCDC052A9BA7145958325C94DEE462 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		08BD9AB3E449D2949B2AD0C4E61800BC /* Products */ = {
+		0D6E7AC8EBD4070915B82ED26EB2C832 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				29C49A6EAF30DD13F556D24E691511F9 /* NEImagePicker.framework */,
-				0236586922E6738CBA8976FDDC0F0C71 /* Pods_NEImagePicker_Example.framework */,
-				1251062742C4D39D2362608E48F19B53 /* Pods_NEImagePicker_Tests.framework */,
+				63ECD5C59422C89428C54EBD36CACA82 /* NEImagePicker */,
 			);
-			name = Products;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		13637023BECEAE2BFA8BD814356507B0 /* Pod */ = {
+		20345A4507F43C603457915F590800F8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E718EB5FB8E7D10C3EB9248F069FA2E5 /* LICENSE */,
-				582CCA8B586264A06A5FFB6B3D43B0AB /* NEImagePicker.podspec */,
-				CCCB58E3F9AC1E7A379F58304EFD2632 /* README.md */,
+				9C584122788F523138D8BABE1D13EF9B /* ar.lproj */,
+				23A00E2A7A5216ADE87B5D5F8D536F09 /* Base.lproj */,
+				4510D323980F5CD120079F1A8C064646 /* da-DK.lproj */,
+				79410867C6132795A5147CAF4EE88345 /* de.lproj */,
+				6B6E27BF090E419DBDD7620C6C64F4CA /* en.lproj */,
+				670FC11D738A64E357F92D560F3A519A /* es.lproj */,
+				2FA4BE2A5769BFAC84F66FBFD0C2BB0D /* fr.lproj */,
+				574359D2BB21C3929885A17FCC67A5A2 /* hu.lproj */,
+				1A7DA80AAE165F094BDF0DA2F4E12383 /* id.lproj */,
+				C1B7005726AB12510287385791601A13 /* it.lproj */,
+				61F7EB323CB83CB35BC90A788AC7D26B /* ja.lproj */,
+				94DE98AC546EE9CB4FFFD0173765BEDD /* ko.lproj */,
+				A05D0A53BAAB51788A3019D3AB044C04 /* ms.lproj */,
+				2735FE4E50B9BDAF6054B640514B85AC /* nl.lproj */,
+				7AA6B736FDEA253709E215218EA2017D /* pl.lproj */,
+				F1014D76DC74FA1C78C3F08F954813F8 /* pt.lproj */,
+				DEEB71B43230DDD55D4243271CC72E2A /* ro.lproj */,
+				2A129C1F52B043ABE67C6934BE87045E /* ru.lproj */,
+				20450D7D5DBC2D4D6C81C27BA332906B /* tr.lproj */,
+				0BEEA0559979A158E1F158D2867081AF /* vi.lproj */,
+				B8B77125162065662CD67B43A9C7D26E /* zh-Hans.lproj */,
+				7F3E9131C1EDA938A267319D29A71BB3 /* zh-Hant.lproj */,
 			);
-			name = Pod;
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3C905454D6C64BD764702675971E7147 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74DE358609FAD395EA51B73BA2DC5231 /* TOCropViewController */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3F7D3AEC6C4F9FCA1CF94BFEB605A0BA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				38D84950CF9DB3A42D8A5F22FC61A0F9 /* Info.plist */,
+				99A2D95821281B31D23221667DC807D3 /* NEImagePicker.modulemap */,
+				4C466020DBFEAB5AC3336208A3179B78 /* NEImagePicker.xcconfig */,
+				0729B6610E5D972D7F6C76D645726BD4 /* NEImagePicker-dummy.m */,
+				FB93BF5FE11557E748C26D30C02FD694 /* NEImagePicker-prefix.pch */,
+				8995A7C0C4A1BA2E197E8369D47FC05A /* NEImagePicker-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/NEImagePicker";
 			sourceTree = "<group>";
 		};
 		3FB2D6698332F4666516F29CE64B45F1 /* Pods-NEImagePicker_Example */ = {
@@ -131,27 +416,162 @@
 			path = "Target Support Files/Pods-NEImagePicker_Example";
 			sourceTree = "<group>";
 		};
-		68CAD58B8C079334290AC7AA41182DF0 /* Support Files */ = {
+		43B46392443500AA821AD77D6784F46B /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				F955CFE05253F0B8FFE8194EFF9DDF46 /* Info.plist */,
-				488E454CC3E104DF49A0EE193E7B466F /* NEImagePicker.modulemap */,
-				BE13CCA210F51ACAD55033B4343ECE5E /* NEImagePicker.xcconfig */,
-				5541AF4BD49C62F026DC576D5D2D15DE /* NEImagePicker-dummy.m */,
-				D226C70EF5ADAAB278A2A8848B89E19A /* NEImagePicker-prefix.pch */,
-				3DC876B61A2D1569B67670A238C14A57 /* NEImagePicker-umbrella.h */,
+				F284375B253A7EA5C7BB73AB67E139AD /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		44FAC4E39E763182DBF81E4461DE69A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				12AC0D763ADA621AB130EDB7277BF9ED /* NEImagePicker.framework */,
+				C04E84E4BC3912BA5D2C13C2A1335BD7 /* Pods_NEImagePicker_Example.framework */,
+				72F2D02B5B0182B7F78372176E9C3681 /* Pods_NEImagePicker_Tests.framework */,
+				117D6AE0DD396A4BB4B1EA8E57C301E6 /* TOCropViewController.framework */,
+				6C97AF5C6774BCC2458FC4D27346F336 /* TOCropViewControllerBundle.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57BB6D4C3C44EEFD66FC964DBE8B8CA5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AB5E70F0242C4FA2B3EDE578D70CD6C /* Info.plist */,
+				9AA94983309FD7CAA4C2855D108A8BB8 /* ResourceBundle-TOCropViewControllerBundle-Info.plist */,
+				91ADE3A155452FF009B872D0DCDC6918 /* TOCropViewController.modulemap */,
+				47C9B4463AB4CD85B3774B56853D5309 /* TOCropViewController.xcconfig */,
+				FD4ECF574D8C36FAE49C5B4A0F38051A /* TOCropViewController-dummy.m */,
+				0C89149CCF137E117A1A490CE92D3CCB /* TOCropViewController-prefix.pch */,
+				4610FC42013866A3FE3ADD6B0F09E05F /* TOCropViewController-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "Example/Pods/Target Support Files/NEImagePicker";
+			path = "../Target Support Files/TOCropViewController";
+			sourceTree = "<group>";
+		};
+		63ECD5C59422C89428C54EBD36CACA82 /* NEImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				368DBD3DD61DA1C097B65C9C26339806 /* NEAlbum.h */,
+				147E5DD6D296577D6CEC460497DBFF13 /* NEAlbum.m */,
+				30E89B3691C3602D26C4CD82B86601A7 /* NEAlbumTableViewController.h */,
+				A926B00B45E3CD5164E99333790FD0A6 /* NEAlbumTableViewController.m */,
+				4C08CC081AA05F3DB7F887BDDAAE06C8 /* NEAsset.h */,
+				733F956AC884225C5D42D5D32D47CEB1 /* NEAsset.m */,
+				E82D1B45B55F8D0C609C63023AA7EC72 /* NEImageFlowViewController.h */,
+				21FE3AF109C8C969A62FCD5427D61A9D /* NEImageFlowViewController.m */,
+				FF708E67560A0BB048640E567749839F /* NEImagePickerController.h */,
+				F558E6C72F2CC7931CDAB156FE23E372 /* NEImagePickerController.m */,
+				73946173B03085AE407CF15D30EF8F1F /* NEImagePickerSourceConfig.h */,
+				51F994152295F03BE1F0D430A341F4D5 /* NEImagePickerSourceConfig.m */,
+				18B63A2D9421F157798A588BB0BF7329 /* NEPhotoBrowser.h */,
+				6B66FF253BC7F1E37AA909380E61EFB8 /* NEPhotoBrowser.m */,
+				7D1B421F6185F4960C2D2E037E51FB26 /* Extensions */,
+				7BC8ABB8C39181E729954270A61368E3 /* helper */,
+				CC1BBEBE9DC9D47F844F1542ED7A0706 /* NETakePhotoController */,
+				CB13CC8FCFB805A213F1EFF68DFC1D39 /* Pod */,
+				3F7D3AEC6C4F9FCA1CF94BFEB605A0BA /* Support Files */,
+				73BBAEF447DEC77878CA3C6EEE4EEBC3 /* Views */,
+			);
+			name = NEImagePicker;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		73BBAEF447DEC77878CA3C6EEE4EEBC3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				746918A7CFD6D213DBF2903C9527F4F5 /* NEAlbumTableViewCell.h */,
+				45434DD9E88313ED1504291C94D800EE /* NEAlbumTableViewCell.m */,
+				58396A0352575B744F508F01033E3A97 /* NEAssetsViewCell.h */,
+				E1EFDFBA601745E9D9F28333232E00FE /* NEAssetsViewCell.m */,
+				8BB3D7A015AE48DFFD315E22320C9803 /* NEBrowserCell.h */,
+				26EBD0A4257CD09F2C096B1855A4E783 /* NEBrowserCell.m */,
+				CB6366456A75261A066FAF91C79BD953 /* NEFullImageButton.h */,
+				6AA20DE76A05EDC0613903AFD872BEE6 /* NEFullImageButton.m */,
+				1DE9F1C1B0A400E00D3F15A5342C7C77 /* NESendButton.h */,
+				F06292701C1E145806D02FE1AFBF6E59 /* NESendButton.m */,
+				81C913A7E820C4549B65971D495B53A4 /* NETapDetectingImageView.h */,
+				751EA32A65ACEB695B398B095E1B3A9C /* NETapDetectingImageView.m */,
+				FD1650D1C557DE777ACEBF5522777EA1 /* NEUnAuthorizedTipsView.h */,
+				B17C7A5B477AF7D3B670E924D775EE8D /* NEUnAuthorizedTipsView.m */,
+			);
+			name = Views;
+			path = NEImagePicker/Classes/Views;
+			sourceTree = "<group>";
+		};
+		74DE358609FAD395EA51B73BA2DC5231 /* TOCropViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EBBA8AB6629C35F797CE10D4A45E5EDF /* TOActivityCroppedImageProvider.h */,
+				19768C1AB557DF186E6670477DFFD679 /* TOActivityCroppedImageProvider.m */,
+				CC65CD7A3160F764FF80CB2A24FE42CC /* TOCropOverlayView.h */,
+				BE74C6BB315A4021567C3080CA6F0001 /* TOCropOverlayView.m */,
+				3F9DC3EBDF4D7C58547792836F3A5146 /* TOCroppedImageAttributes.h */,
+				06CD9186928EC470B40DDCD7DDF0F376 /* TOCroppedImageAttributes.m */,
+				26D8DE907373A21B79284054F2E991EC /* TOCropScrollView.h */,
+				B1017E6D7DDE86A0A3FD7FB0C1E95328 /* TOCropScrollView.m */,
+				1A66DAC312ECD5E7789CAEDF1AF8DE8A /* TOCropToolbar.h */,
+				545929CE747B209F78E5E72EBC2E024F /* TOCropToolbar.m */,
+				599A72526B7318543D8111F8D8DB1CD1 /* TOCropView.h */,
+				88FDD0F6E0E71815A97B3173ABDB7030 /* TOCropView.m */,
+				BEEECA8E667257BEF79960A337EF7E34 /* TOCropViewConstants.h */,
+				6431F38CA470C985302D70FF104B133E /* TOCropViewController.h */,
+				20787E1A7568E30159DA76F04A608083 /* TOCropViewController.m */,
+				C58DA104DBE8014188A20B6DF3BC2FB6 /* TOCropViewControllerTransitioning.h */,
+				B4BBDF5323C8188F0C728D2CDBDA64F6 /* TOCropViewControllerTransitioning.m */,
+				8D530BBA421EA75F5288FD24CD3F6F62 /* UIImage+CropRotate.h */,
+				4F91E3D646B2D8E3973E401855CD08B6 /* UIImage+CropRotate.m */,
+				20345A4507F43C603457915F590800F8 /* Resources */,
+				57BB6D4C3C44EEFD66FC964DBE8B8CA5 /* Support Files */,
+			);
+			name = TOCropViewController;
+			path = TOCropViewController;
+			sourceTree = "<group>";
+		};
+		7BC8ABB8C39181E729954270A61368E3 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				F7D4C06B3CA0A8AD3580DE6CE3A6D493 /* NEImageHelper.h */,
+				5B8E3F3E1337E03CFB52A5A5BCD16D66 /* NEImageHelper.m */,
+				9A0AE521046554A5B762EA245CEBC4A4 /* PHAsset+Select.h */,
+				526D3C57139816D99B8CF084821AC08B /* PHAsset+Select.m */,
+				C44524AFAA71F7DADDDA13BE13511FBC /* UIImage+Common.h */,
+				B69B4C77257047AD441E553B3FA7AA7E /* UIImage+Common.m */,
+			);
+			name = helper;
+			path = NEImagePicker/Classes/helper;
+			sourceTree = "<group>";
+		};
+		7D1B421F6185F4960C2D2E037E51FB26 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9005680874C0F5575912E546CD691782 /* NSURL+NEIMagePickerUrlEqual.h */,
+				82DDA2DDC115F1EFD30241A205431A3C /* NSURL+NEIMagePickerUrlEqual.m */,
+				3CA761DD65C25AA8D03891EEDA989ED8 /* UIColor+Hex.h */,
+				22CB1E3A6511E30541396AE52EC02936 /* UIColor+Hex.m */,
+				D60ACE3EF204675FAAF6FC56A9373CDA /* UIImage+NEImagePicker.h */,
+				8E689F09BFD21FD750EF50F42E616E8E /* UIImage+NEImagePicker.m */,
+				5269A07C08CB1B4D9B55042971BB66CE /* UIImagePickerController+Fixed.h */,
+				E0300389622B10F69A7610B117EFD4D7 /* UIImagePickerController+Fixed.m */,
+				281F5594F3E909BEEC751E3F8145DBF4 /* UIView+NEImagePicker.h */,
+				76AF8FA0DC5303A7F486B2864554D14E /* UIView+NEImagePicker.m */,
+				E41AD2D73A086D0D4F68CB798194469A /* UIViewController+NEImagePicker.h */,
+				76D27E0F6F673C4F2C6DAD9D03404798 /* UIViewController+NEImagePicker.m */,
+			);
+			name = Extensions;
+			path = NEImagePicker/Classes/Extensions;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				F182D5FAD60C983E5C5BE6E610188390 /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				08BD9AB3E449D2949B2AD0C4E61800BC /* Products */,
+				0D6E7AC8EBD4070915B82ED26EB2C832 /* Development Pods */,
+				A76777640736F72916FAE26C3505FB82 /* Frameworks */,
+				3C905454D6C64BD764702675971E7147 /* Pods */,
+				44FAC4E39E763182DBF81E4461DE69A5 /* Products */,
 				9811A1E0783C3166E096E43B13FAE726 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -183,38 +603,41 @@
 			path = "Target Support Files/Pods-NEImagePicker_Tests";
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		A76777640736F72916FAE26C3505FB82 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+				120A68D11E5E5B0D52B3B8E7F2276A3F /* TOCropViewController.framework */,
+				43B46392443500AA821AD77D6784F46B /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+		CB13CC8FCFB805A213F1EFF68DFC1D39 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+				CEB6D74AB7C2EA63ADDDE300DEAFB524 /* LICENSE */,
+				1FF7EC9E59D47DC6221BB49F80E55618 /* NEImagePicker.podspec */,
+				97C0FFE67C4AA2D479A1C6BCD57999C8 /* README.md */,
 			);
-			name = iOS;
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		DDF05FA9935184DAECCC699722C5088B /* NEImagePicker */ = {
+		CC1BBEBE9DC9D47F844F1542ED7A0706 /* NETakePhotoController */ = {
 			isa = PBXGroup;
 			children = (
-				13637023BECEAE2BFA8BD814356507B0 /* Pod */,
-				68CAD58B8C079334290AC7AA41182DF0 /* Support Files */,
+				8FCA204E777911A9F0231BC1254FDB29 /* NECameraController.h */,
+				F512D5639F4423C02EA5103DECAEDF77 /* NECameraController.m */,
+				FB26E1EA413F31ECC1B3AC14841A3476 /* NECameraController+Helper.h */,
+				AEF3A28960E00C6061045301104DF924 /* NECameraController+Helper.m */,
+				E3B0D908E39796B3D663FF8544CAD8DD /* NECropViewController.h */,
+				7B80FE6957CB090EA5992877762E499E /* NECropViewController.m */,
+				0DDB754CC89F8BC2C97451BE04A6F83B /* NETakePhotoController.h */,
+				8B1FF0490E7D4E6A46DD988FEF3FB820 /* NETakePhotoController.m */,
+				9D61CAA4CA25C42BB4F0AE664E72B44B /* UIImage+FixOrientation.h */,
+				407238E839AF909469E16347588C2151 /* UIImage+FixOrientation.m */,
 			);
-			name = NEImagePicker;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		F182D5FAD60C983E5C5BE6E610188390 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DDF05FA9935184DAECCC699722C5088B /* NEImagePicker */,
-			);
-			name = "Development Pods";
+			name = NETakePhotoController;
+			path = NEImagePicker/Classes/NETakePhotoController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,19 +651,65 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4148C3C1A5C3FF5B3251E351F4589910 /* Headers */ = {
+		1B5181479C0978E360E8E00FFDBEC8F8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7A3347C9C15100A74608EAC516D3587 /* NEImagePicker-umbrella.h in Headers */,
+				CE21A1A9CFD80CFC491EC30361B77B94 /* TOActivityCroppedImageProvider.h in Headers */,
+				D895B7ACBB7FF2206DDAF1E3AC0CEB42 /* TOCropOverlayView.h in Headers */,
+				743065A94BB9FEDC1AAE531A3C5BCAAD /* TOCroppedImageAttributes.h in Headers */,
+				3E3DBD6ACC45A8B1D03AA2577766D1A0 /* TOCropScrollView.h in Headers */,
+				FF88AD8A14EC7BD85DF892815470F14C /* TOCropToolbar.h in Headers */,
+				CDC9B8F9C4909D4713C39F5C8C383654 /* TOCropView.h in Headers */,
+				3A9E06FE69FE6448B5A026C2FCED491A /* TOCropViewConstants.h in Headers */,
+				CD0B0EFCAFB437FC17E03E3203C860E7 /* TOCropViewController-umbrella.h in Headers */,
+				404876321F55A2888E18678A003A55D7 /* TOCropViewController.h in Headers */,
+				03A54BE3CAE1D7E30408B1D3425FC401 /* TOCropViewControllerTransitioning.h in Headers */,
+				7C86AA8A172070CEAFD381F4A91A1C69 /* UIImage+CropRotate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FF9F003FF8D48F02C250C1A233C47091 /* Headers */ = {
+		BD6B285CEC6F3A0512AA34E0BD3E1F9B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				113CE445F4DA96CBE9CF04B76898EF0B /* Pods-NEImagePicker_Example-umbrella.h in Headers */,
+				61922BFD465737F792E640D8555BB975 /* Pods-NEImagePicker_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2FB5FCD7B5917E7446714563B79B5B3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E755285DDE783FE261ED367D3D025AC /* NEAlbum.h in Headers */,
+				AFDB193BD551010DBCBD476D79069C1E /* NEAlbumTableViewCell.h in Headers */,
+				36136090B3C7DDF9277F392BEF853A1F /* NEAlbumTableViewController.h in Headers */,
+				49CBD30B5477A8A68039F8ECBE3BD761 /* NEAsset.h in Headers */,
+				73E568BB3DCC45C64F09160EBA2D1846 /* NEAssetsViewCell.h in Headers */,
+				F73662012FBD495106622CFD8347F63F /* NEBrowserCell.h in Headers */,
+				ED33F0207418BE32CD9DBEA64BF44FB8 /* NECameraController+Helper.h in Headers */,
+				CF5058FB0311EAA52B6E0808575029D9 /* NECameraController.h in Headers */,
+				3D275D2FCE6C5E6E209A7A5D22E1175A /* NECropViewController.h in Headers */,
+				0FBCE5CB214D6D70F9959811E576A2E2 /* NEFullImageButton.h in Headers */,
+				4BE057725515645C605214AEC73F33AC /* NEImageFlowViewController.h in Headers */,
+				F5F9BA45C513C6D8154493B85E154BA1 /* NEImageHelper.h in Headers */,
+				95ACF4BA7B5729B6730464D646F7DF41 /* NEImagePicker-umbrella.h in Headers */,
+				A2953BDB210297909177E6F464DFE73F /* NEImagePickerController.h in Headers */,
+				CC549EE065BAA9501319D8463F938753 /* NEImagePickerSourceConfig.h in Headers */,
+				8507CC533DA10DA633DC2DC6F2F3E52C /* NEPhotoBrowser.h in Headers */,
+				B80E8C617F10A8A2DA2CCC59AAEB6BF0 /* NESendButton.h in Headers */,
+				695EA79F28F1E0D0C3F39D63B5F78650 /* NETakePhotoController.h in Headers */,
+				823CA28D93FCA28B5694725EED4F9F61 /* NETapDetectingImageView.h in Headers */,
+				EBD6169963C57C2F42389A8C1EA1620D /* NEUnAuthorizedTipsView.h in Headers */,
+				BF20FAAE8E51FDEF0588DE1F73C8703E /* NSURL+NEIMagePickerUrlEqual.h in Headers */,
+				4E679C7E691A2B0D37084C1FC728910C /* PHAsset+Select.h in Headers */,
+				A191868260440293FBE54809FF37E7B4 /* UIColor+Hex.h in Headers */,
+				3A1613AE4C0A0C6ABF7FB355114A4197 /* UIImage+Common.h in Headers */,
+				1619B05CD29EAF746FBA4C6E06E13E09 /* UIImage+FixOrientation.h in Headers */,
+				411DB261640B6C92910723E7FA6EF711 /* UIImage+NEImagePicker.h in Headers */,
+				404C4C8C91015C7AA1FCC3712712BD9C /* UIImagePickerController+Fixed.h in Headers */,
+				9380B0F922312E2C39A3BAEB6D5B29C1 /* UIView+NEImagePicker.h in Headers */,
+				92744F131AB8BBA2C9632F909DC6B087 /* UIViewController+NEImagePicker.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,42 +730,80 @@
 			);
 			name = "Pods-NEImagePicker_Tests";
 			productName = "Pods-NEImagePicker_Tests";
-			productReference = 1251062742C4D39D2362608E48F19B53 /* Pods_NEImagePicker_Tests.framework */;
+			productReference = 72F2D02B5B0182B7F78372176E9C3681 /* Pods_NEImagePicker_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4655382BF073813A7A1825E71F3A2771 /* Pods-NEImagePicker_Example */ = {
+		67CDF6935218ACC157573ED941EF83FE /* NEImagePicker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A365F7173AEFB2510EC8FC844EB7A261 /* Build configuration list for PBXNativeTarget "Pods-NEImagePicker_Example" */;
+			buildConfigurationList = DC24233778B18F3E0CBECC17B9B89A9D /* Build configuration list for PBXNativeTarget "NEImagePicker" */;
 			buildPhases = (
-				9C49C6D0215B0A681B6D15866A2F2374 /* Sources */,
-				0442319BCF9AB38ECBC4918643DB7E74 /* Frameworks */,
-				FF9F003FF8D48F02C250C1A233C47091 /* Headers */,
+				502C8559126BB0E480CE736931EEAA90 /* Sources */,
+				11A30B1D4F1DA0727BC5C8FD48D2E6DC /* Frameworks */,
+				D2FB5FCD7B5917E7446714563B79B5B3 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				501F8E13583AD8B88257AAB92DEA2F15 /* PBXTargetDependency */,
-			);
-			name = "Pods-NEImagePicker_Example";
-			productName = "Pods-NEImagePicker_Example";
-			productReference = 0236586922E6738CBA8976FDDC0F0C71 /* Pods_NEImagePicker_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		7B7722F82D1F218899D49AFFAA0718B3 /* NEImagePicker */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E8E211351D762D9FE648CCD5AE4DD50C /* Build configuration list for PBXNativeTarget "NEImagePicker" */;
-			buildPhases = (
-				9E679D794E45F6AC93B3DA3E7DD40A75 /* Sources */,
-				A2AEEA23B55DDDBC890DF657D791E734 /* Frameworks */,
-				4148C3C1A5C3FF5B3251E351F4589910 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
+				6AF7EBCFC9A2B96964A6AF14039F40C2 /* PBXTargetDependency */,
 			);
 			name = NEImagePicker;
 			productName = NEImagePicker;
-			productReference = 29C49A6EAF30DD13F556D24E691511F9 /* NEImagePicker.framework */;
+			productReference = 12AC0D763ADA621AB130EDB7277BF9ED /* NEImagePicker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A5FB5AF6EE797805F58DB43309474C61 /* TOCropViewController-TOCropViewControllerBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A96DEE8D66759856820AFA4C81320886 /* Build configuration list for PBXNativeTarget "TOCropViewController-TOCropViewControllerBundle" */;
+			buildPhases = (
+				8D1BC266BFC1FA82E32A24980F7748AE /* Sources */,
+				73B8839A3CDAEA082300BEED69B90C66 /* Frameworks */,
+				013FB39C5BEE94D6EA4F0A141097E8FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TOCropViewController-TOCropViewControllerBundle";
+			productName = "TOCropViewController-TOCropViewControllerBundle";
+			productReference = 6C97AF5C6774BCC2458FC4D27346F336 /* TOCropViewControllerBundle.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		E936E74CC87ADD6EB439B23712ADC42E /* Pods-NEImagePicker_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D74882F7240AF70D80A0EA35C7F949B1 /* Build configuration list for PBXNativeTarget "Pods-NEImagePicker_Example" */;
+			buildPhases = (
+				E59ABC1CA4ED3A00EA499E920D887466 /* Sources */,
+				4F79877C9088AFAE104FFEFFFB1AE62D /* Frameworks */,
+				BD6B285CEC6F3A0512AA34E0BD3E1F9B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F9FF654EFA6E23F37645C02D619ADF7 /* PBXTargetDependency */,
+				F6602FCE55434C9C54601FD5B6A357CD /* PBXTargetDependency */,
+			);
+			name = "Pods-NEImagePicker_Example";
+			productName = "Pods-NEImagePicker_Example";
+			productReference = C04E84E4BC3912BA5D2C13C2A1335BD7 /* Pods_NEImagePicker_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F4E7AA64DC9D727DB393A4B303B8ACCF /* TOCropViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C26393CA1D6692BFD98F834F0E929D63 /* Build configuration list for PBXNativeTarget "TOCropViewController" */;
+			buildPhases = (
+				DC502E0CBA2FF6B8CD3F85E5A7D55687 /* Sources */,
+				DB48B7EC955CFA69EC1D82CE867EFD47 /* Frameworks */,
+				49752578DDBE61C81C37A83ABFF9DAB3 /* Resources */,
+				1B5181479C0978E360E8E00FFDBEC8F8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D6320FEA725B2814C9633BC859F86F7 /* PBXTargetDependency */,
+			);
+			name = TOCropViewController;
+			productName = TOCropViewController;
+			productReference = 117D6AE0DD396A4BB4B1EA8E57C301E6 /* TOCropViewController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -316,18 +823,96 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 08BD9AB3E449D2949B2AD0C4E61800BC /* Products */;
+			productRefGroup = 44FAC4E39E763182DBF81E4461DE69A5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7B7722F82D1F218899D49AFFAA0718B3 /* NEImagePicker */,
-				4655382BF073813A7A1825E71F3A2771 /* Pods-NEImagePicker_Example */,
+				67CDF6935218ACC157573ED941EF83FE /* NEImagePicker */,
+				E936E74CC87ADD6EB439B23712ADC42E /* Pods-NEImagePicker_Example */,
 				3C60FCF51F89F7925B0A8E6F11D3648B /* Pods-NEImagePicker_Tests */,
+				F4E7AA64DC9D727DB393A4B303B8ACCF /* TOCropViewController */,
+				A5FB5AF6EE797805F58DB43309474C61 /* TOCropViewController-TOCropViewControllerBundle */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		013FB39C5BEE94D6EA4F0A141097E8FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFB1CA6D7A15FFDE2CC0C8ADDB8BD42F /* ar.lproj in Resources */,
+				DA8AFE69F5BA7C0820CD0E68A84BB76C /* Base.lproj in Resources */,
+				A4515C6594A0621EAA25833CA09CE6C1 /* da-DK.lproj in Resources */,
+				B21377AA0E4DFFD70AC4064A787F0395 /* de.lproj in Resources */,
+				82A056B61F47BDC0B2FAD59D22CAF253 /* en.lproj in Resources */,
+				360DB82CB692B8FA2E555E7C3E100A56 /* es.lproj in Resources */,
+				C786D8799349D1A4D062CAA1EFDE6A3C /* fr.lproj in Resources */,
+				60F3F15B730A7605BDDDF618CC5C8C04 /* hu.lproj in Resources */,
+				A9B7EF0C726A6479E5357B2637076716 /* id.lproj in Resources */,
+				8DA32812C99181BF247081D88C76C5D0 /* it.lproj in Resources */,
+				66683B1B923C44C89F6A9264F8FC87F8 /* ja.lproj in Resources */,
+				C9C761564788A0E59E842662CE890966 /* ko.lproj in Resources */,
+				8E6B4524EC82F4F9B49BA0FFDCEACBB8 /* ms.lproj in Resources */,
+				877E32A89CEA8EADFF4D742C6CC6C812 /* nl.lproj in Resources */,
+				162BC27569837F58288786998DD3239B /* pl.lproj in Resources */,
+				DA9AF83E0DBB80959BA3C048E8548B37 /* pt.lproj in Resources */,
+				570C840B7BE9D6D0A606DC6DC4ECBDE1 /* ro.lproj in Resources */,
+				82426F0E4C931262A6CB398EB79A7BB1 /* ru.lproj in Resources */,
+				CAFCA816D29799CB9B37E8B412266414 /* tr.lproj in Resources */,
+				35C23E03C399E9763FC6DD2AEF2E15CD /* vi.lproj in Resources */,
+				96DE0DBF7600F629ABF832FFCB61F8B9 /* zh-Hans.lproj in Resources */,
+				CB3E77BB04423B1AD941F86CD03BA743 /* zh-Hant.lproj in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49752578DDBE61C81C37A83ABFF9DAB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E18E3AE6D8A61CF564825C53DBD2239 /* TOCropViewControllerBundle.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		502C8559126BB0E480CE736931EEAA90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF0A0DCA8D467C29F237DA1791EAC05D /* NEAlbum.m in Sources */,
+				DA88F4D03807C4866CDAE53A7E1C65AA /* NEAlbumTableViewCell.m in Sources */,
+				436A8E44AFA6E9302E1C3031E05E91F6 /* NEAlbumTableViewController.m in Sources */,
+				DC5922F1FB05A32E18080EE4DB72DC22 /* NEAsset.m in Sources */,
+				5D4B60917A44FFA958C33E32EBB0054F /* NEAssetsViewCell.m in Sources */,
+				1E270C98C619B5A4BE4AA6B887B8510F /* NEBrowserCell.m in Sources */,
+				973F4FAD7064D4E89D1FDCF3E01EB97B /* NECameraController+Helper.m in Sources */,
+				5210B99D1380B7E2673B2C6323049079 /* NECameraController.m in Sources */,
+				A9F6A22A9442F6D4FE2C712303471DA7 /* NECropViewController.m in Sources */,
+				D34F4F251602B9139A0ABC0E3730296C /* NEFullImageButton.m in Sources */,
+				3BE803D68191053831CE2BA3FC7C9906 /* NEImageFlowViewController.m in Sources */,
+				43A1353B847F918E5FAE1A948088F4EB /* NEImageHelper.m in Sources */,
+				9D90A06D57728455C2EF2ED2C694AFE2 /* NEImagePicker-dummy.m in Sources */,
+				2D8FC9142D9B3861EC9DCFE15748728B /* NEImagePickerController.m in Sources */,
+				C64312D21521C94293F77DD32C249C17 /* NEImagePickerSourceConfig.m in Sources */,
+				599BAF4880EF74DC4329BEEF095D4CCA /* NEPhotoBrowser.m in Sources */,
+				0456A5F076C9C58C0F88A6CCBC4F25A1 /* NESendButton.m in Sources */,
+				46AA36F8FAE573569FC435E67CC27476 /* NETakePhotoController.m in Sources */,
+				F637BF8301BD866654D3B4D303BEDE6F /* NETapDetectingImageView.m in Sources */,
+				AEF47BB738A9BE708259E7F562F9A141 /* NEUnAuthorizedTipsView.m in Sources */,
+				E05BE712DC6AD85F84C675B87F6B32D2 /* NSURL+NEIMagePickerUrlEqual.m in Sources */,
+				86613E913BB767D7DFFCD0C8BF08716A /* PHAsset+Select.m in Sources */,
+				655DF6923FAD0CC4B83CB330CC1FF9DE /* UIColor+Hex.m in Sources */,
+				EE229FFF47064F6E426A2CF4D26BC90D /* UIImage+Common.m in Sources */,
+				0BAD52C766A325C7851A3FBA63B7A578 /* UIImage+FixOrientation.m in Sources */,
+				117610D8A7DFAC90F18B024C413D6DA7 /* UIImage+NEImagePicker.m in Sources */,
+				6F0DBB32F74FD19675ED9CB2407746C8 /* UIImagePickerController+Fixed.m in Sources */,
+				A03EA9C6BDD63842D946D837388BD4D3 /* UIView+NEImagePicker.m in Sources */,
+				4137C658900B6CE5D41CE1612E4F066F /* UIViewController+NEImagePicker.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56F4DA9ECC1D8102EEB65393DF360EFE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,37 +921,71 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C49C6D0215B0A681B6D15866A2F2374 /* Sources */ = {
+		8D1BC266BFC1FA82E32A24980F7748AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4046D9189126E952BA7717147E1A3879 /* Pods-NEImagePicker_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9E679D794E45F6AC93B3DA3E7DD40A75 /* Sources */ = {
+		DC502E0CBA2FF6B8CD3F85E5A7D55687 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0196EEA8A77DDA58DAAF257094C54FC /* NEImagePicker-dummy.m in Sources */,
+				DAF048E445D7D0BD097308DFEA8A1DDD /* TOActivityCroppedImageProvider.m in Sources */,
+				59CBD150301DE66B7409993FDDB7D137 /* TOCropOverlayView.m in Sources */,
+				5493C2D8A6FBFB592E09111543099A27 /* TOCroppedImageAttributes.m in Sources */,
+				D2233935B193C43B6031BC5CBE4C4B9D /* TOCropScrollView.m in Sources */,
+				2582A20BACC9878FB228A6A8D26F97D3 /* TOCropToolbar.m in Sources */,
+				A1C9630069A9500345A8B9082F1A0641 /* TOCropView.m in Sources */,
+				30FBED4E186180E8843E7C6B298CCC82 /* TOCropViewController-dummy.m in Sources */,
+				83C5DAEF308E96249B41C73B3270E350 /* TOCropViewController.m in Sources */,
+				F2C8E7D8628CA3E1FC4A7BBF1E75B1FD /* TOCropViewControllerTransitioning.m in Sources */,
+				22EFEC1D5A14E909E6E1A9F95370D818 /* UIImage+CropRotate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E59ABC1CA4ED3A00EA499E920D887466 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48676C4A155B6A31E2B4DA8752D936AB /* Pods-NEImagePicker_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		501F8E13583AD8B88257AAB92DEA2F15 /* PBXTargetDependency */ = {
+		0D6320FEA725B2814C9633BC859F86F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "TOCropViewController-TOCropViewControllerBundle";
+			target = A5FB5AF6EE797805F58DB43309474C61 /* TOCropViewController-TOCropViewControllerBundle */;
+			targetProxy = 21F1C772BE1B8261B42EA9D6AA820024 /* PBXContainerItemProxy */;
+		};
+		3F9FF654EFA6E23F37645C02D619ADF7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NEImagePicker;
-			target = 7B7722F82D1F218899D49AFFAA0718B3 /* NEImagePicker */;
-			targetProxy = 178066679FC151309D489D5F9BD37765 /* PBXContainerItemProxy */;
+			target = 67CDF6935218ACC157573ED941EF83FE /* NEImagePicker */;
+			targetProxy = B37E3705343BB96830D5F7812CF24D49 /* PBXContainerItemProxy */;
+		};
+		6AF7EBCFC9A2B96964A6AF14039F40C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TOCropViewController;
+			target = F4E7AA64DC9D727DB393A4B303B8ACCF /* TOCropViewController */;
+			targetProxy = A90865BD7A87EBEB90AF54614E65F9BA /* PBXContainerItemProxy */;
+		};
+		F6602FCE55434C9C54601FD5B6A357CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TOCropViewController;
+			target = F4E7AA64DC9D727DB393A4B303B8ACCF /* TOCropViewController */;
+			targetProxy = 378FB7DD328E10A0105925EC3C3E9566 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1ED3523395DEABEDF0C9FCC4E22A1435 /* Release */ = {
+		0A8D7FB67A51218D6C23AB9612E3FC73 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9EC0DAF0F8BEC649A6632E46AC1E67A8 /* Pods-NEImagePicker_Example.release.xcconfig */;
+			baseConfigurationReference = 4C466020DBFEAB5AC3336208A3179B78 /* NEImagePicker.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -377,23 +996,35 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-NEImagePicker_Example/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/NEImagePicker/NEImagePicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NEImagePicker/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-NEImagePicker_Example/Pods-NEImagePicker_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_NEImagePicker_Example;
+				MODULEMAP_FILE = "Target Support Files/NEImagePicker/NEImagePicker.modulemap";
+				PRODUCT_NAME = NEImagePicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		12B301C16271E98F27F2FDA88C41CF62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47C9B4463AB4CD85B3774B56853D5309 /* TOCropViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TOCropViewController";
+				INFOPLIST_FILE = "Target Support Files/TOCropViewController/ResourceBundle-TOCropViewControllerBundle-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = TOCropViewControllerBundle;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -462,9 +1093,101 @@
 			};
 			name = Debug;
 		};
-		3355674BD459868FC758D3ADB3087C1A /* Debug */ = {
+		32329B685ABEBE82F257A6450308C302 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE13CCA210F51ACAD55033B4343ECE5E /* NEImagePicker.xcconfig */;
+			baseConfigurationReference = 47C9B4463AB4CD85B3774B56853D5309 /* TOCropViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TOCropViewController/TOCropViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TOCropViewController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TOCropViewController/TOCropViewController.modulemap";
+				PRODUCT_NAME = TOCropViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3FAD742F45FD2E3ABA300CA9D48F1FBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EC0DAF0F8BEC649A6632E46AC1E67A8 /* Pods-NEImagePicker_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-NEImagePicker_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NEImagePicker_Example/Pods-NEImagePicker_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_NEImagePicker_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5E1BD8932356411168BAC4DECA61661B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47C9B4463AB4CD85B3774B56853D5309 /* TOCropViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TOCropViewController/TOCropViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TOCropViewController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TOCropViewController/TOCropViewController.modulemap";
+				PRODUCT_NAME = TOCropViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6B8293BF9A835B13E16CB034E9C578CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C466020DBFEAB5AC3336208A3179B78 /* NEImagePicker.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -486,12 +1209,29 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
+			name = Release;
+		};
+		AF95FB5A2944C01CFBAAB4C23701C642 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47C9B4463AB4CD85B3774B56853D5309 /* TOCropViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TOCropViewController";
+				INFOPLIST_FILE = "Target Support Files/TOCropViewController/ResourceBundle-TOCropViewControllerBundle-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = TOCropViewControllerBundle;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
 			name = Debug;
 		};
-		7127C46CDE80ECF0F5E0C8D989516FC8 /* Debug */ = {
+		BC8A1EB5389749F1BEDE4635A5764838 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 387EAC19A8E6CED5ACBB2819D075811F /* Pods-NEImagePicker_Example.debug.xcconfig */;
 			buildSettings = {
@@ -522,36 +1262,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		9F21EED8950D1037B1C0553F399E9AAA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE13CCA210F51ACAD55033B4343ECE5E /* NEImagePicker.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/NEImagePicker/NEImagePicker-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/NEImagePicker/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/NEImagePicker/NEImagePicker.modulemap";
-				PRODUCT_NAME = NEImagePicker;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		C3E37FB098AE76440E29106ADBF00CEB /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -686,20 +1396,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A365F7173AEFB2510EC8FC844EB7A261 /* Build configuration list for PBXNativeTarget "Pods-NEImagePicker_Example" */ = {
+		A96DEE8D66759856820AFA4C81320886 /* Build configuration list for PBXNativeTarget "TOCropViewController-TOCropViewControllerBundle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7127C46CDE80ECF0F5E0C8D989516FC8 /* Debug */,
-				1ED3523395DEABEDF0C9FCC4E22A1435 /* Release */,
+				AF95FB5A2944C01CFBAAB4C23701C642 /* Debug */,
+				12B301C16271E98F27F2FDA88C41CF62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E8E211351D762D9FE648CCD5AE4DD50C /* Build configuration list for PBXNativeTarget "NEImagePicker" */ = {
+		C26393CA1D6692BFD98F834F0E929D63 /* Build configuration list for PBXNativeTarget "TOCropViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3355674BD459868FC758D3ADB3087C1A /* Debug */,
-				9F21EED8950D1037B1C0553F399E9AAA /* Release */,
+				5E1BD8932356411168BAC4DECA61661B /* Debug */,
+				32329B685ABEBE82F257A6450308C302 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D74882F7240AF70D80A0EA35C7F949B1 /* Build configuration list for PBXNativeTarget "Pods-NEImagePicker_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC8A1EB5389749F1BEDE4635A5764838 /* Debug */,
+				3FAD742F45FD2E3ABA300CA9D48F1FBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC24233778B18F3E0CBECC17B9B89A9D /* Build configuration list for PBXNativeTarget "NEImagePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A8D7FB67A51218D6C23AB9612E3FC73 /* Debug */,
+				6B8293BF9A835B13E16CB034E9C578CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

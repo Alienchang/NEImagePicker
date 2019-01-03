@@ -14,6 +14,7 @@ typedef enum : NSUInteger {
     NEImagePickerImaageSizeFull,
     NEImagePickerImaageSizeFullScreen,
     NEImagePickerImaageSizeThumb,
+    NEImagePickerImaageSizeSmall
 } NEImagePickerImaageSizeType;
 
 @interface NEAsset : NSObject

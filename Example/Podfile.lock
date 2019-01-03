@@ -1,5 +1,7 @@
 PODS:
-  - NEImagePicker (0.1.0)
+  - NEImagePicker (0.1.0):
+    - TOCropViewController
+  - TOCropViewController (2.4.0)
 
 DEPENDENCIES:
   - NEImagePicker (from `../`)
@@ -9,7 +11,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  NEImagePicker: 4fde5572a5b2c27727868b1ffc186985e288d281
+  NEImagePicker: a5289bbce74e5aa28826443a81d4f11f5906f78e
+  TOCropViewController: 368d8df3ea43b62c3dc5a61f11b9048274d240bd
 
 PODFILE CHECKSUM: 543045f58e58ebe7d447040a5cac90449e539dae
 

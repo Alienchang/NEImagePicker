@@ -48,7 +48,6 @@
     }
 }
 
-// Get and display image
 - (void)displayImage {
     
     CGFloat screenScale = [[UIScreen mainScreen] scale];
@@ -59,7 +58,7 @@
     self.zoomingScrollView.contentSize = CGSizeMake(0, 0);
     
     __weak typeof(self) weakself = self;
-    [self.asset fetchImageFull:NEImagePickerImaageSizeFullScreen complete:^(UIImage *image) {
+    [self.asset fetchImageFull:NEImagePickerImaageSizeFull complete:^(UIImage *image) {
         weakself.photoImageView.image = image;
         weakself.photoImageView.hidden = NO;
         CGRect photoImageViewFrame;

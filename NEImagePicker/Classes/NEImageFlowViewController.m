@@ -18,9 +18,9 @@
 #import <Photos/Photos.h>
 #import "UIImage+NEImagePicker.h"
 #import "NEImageHelper.h"
+#import "NEPreviewController.h"
 
-
-@interface NEImageFlowViewController () <UICollectionViewDataSource, UICollectionViewDelegate, NEAssetsViewCellDelegate, NEPhotoBrowserDelegate>
+@interface NEImageFlowViewController () <UICollectionViewDataSource, UICollectionViewDelegate, NEAssetsViewCellDelegate, NEPhotoBrowserDelegate ,UIViewControllerPreviewingDelegate>
 
 @property (nonatomic, strong) NSURL *assetsGroupURL;
 
@@ -29,9 +29,10 @@
 @property (nonatomic ,strong) UIButton          *previewButton;
 @property (nonatomic, strong) NSMutableArray <NEAsset *>*assetsArray;
 @property (nonatomic, strong) NSMutableArray <NEAsset *>*selectedAssetsArray;
-
 @property (nonatomic, assign) BOOL isFullImage;
 @property (nonatomic ,strong) NEAlbum *album;
+@property (nonatomic ,assign) BOOL didAppBarIsTranslucent;
+
 @end
 
 static NSString* const NEAssetsViewCellReuseIdentifier = @"NEAssetsViewCell";
@@ -52,6 +53,17 @@ static NSString* const NEAssetsViewCellReuseIdentifier = @"NEAssetsViewCell";
     [super viewDidLoad];
     [self setupView];
     [self setupData];
+    
+    if ([self NEImagePickerController].open3DTouch) {
+        if (@available(iOS 9.0, *)) {
+            if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+                // 添加3D touch 监听
+                [self registerForPreviewingWithDelegate:self sourceView:self.view];
+            }
+        } else {
+            
+        }
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -100,11 +112,35 @@ static NSString* const NEAssetsViewCellReuseIdentifier = @"NEAssetsViewCell";
     
     [self setToolbarItems:@[item1,item2,item3,item4] animated:NO];
     [self.navigationController.toolbar setBarTintColor:[UIColor whiteColor]];
-    [self.navigationController.toolbar setTranslucent:NO];
+    
+    if (UINavigationBar.appearance.isTranslucent) {
+        [self.navigationController.toolbar setTranslucent:NO];
+    } else {
+        [self.navigationController.toolbar setTranslucent:YES];
+    }
+    
     
     [self.previewButton setEnabled:NO];
     [self.sendButton setEnabled:NO];
     item1.enabled = NO;
+    [self.view addSubview:self.imageFlowCollectionView];
+    
+    if (!UINavigationBar.appearance.isTranslucent) {
+        UIEdgeInsets edgeInsets;
+        if (@available(iOS 11.0, *)) {
+            UIWindow *window = UIApplication.sharedApplication.keyWindow;
+            if (!window && UIApplication.sharedApplication.windows.count) {
+                window = UIApplication.sharedApplication.windows[0];
+            }
+            edgeInsets = window.safeAreaInsets;
+        } else {
+            edgeInsets = UIEdgeInsetsZero;
+        }
+        
+        [self.imageFlowCollectionView setFrame:CGRectMake(CGRectGetMinX(self.view.bounds), CGRectGetMinY(self.view.bounds), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - 64 - edgeInsets.bottom)];
+    } else {
+        [self.imageFlowCollectionView setFrame:self.view.bounds];
+    }
 }
 
 - (void)loadData {
@@ -112,6 +148,7 @@ static NSString* const NEAssetsViewCellReuseIdentifier = @"NEAssetsViewCell";
     [self.album fetchAssetsWithoutImage:^(NSArray<NEAsset *>*assets) {
         [weakself.assetsArray addObjectsFromArray:assets];
         [weakself.imageFlowCollectionView reloadData];
+        [weakself.imageFlowCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:weakself.assetsArray.count - 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
     }];
 }
 
@@ -126,7 +163,7 @@ static NSString* const NEAssetsViewCellReuseIdentifier = @"NEAssetsViewCell";
         ||
         NO == [self.navigationController isKindOfClass:[NEImagePickerController class]])
     {
-        NSAssert(false, @"check the navigation controller");
+        return nil;
     }
     return (NEImagePickerController *)self.navigationController;
 }
@@ -149,6 +186,9 @@ static NSString* const NEAssetsViewCellReuseIdentifier = @"NEAssetsViewCell";
 }
 
 - (void)addAssetsObject:(NEAsset *)asset {
+    if (!asset) {
+        return;
+    }
     [self.selectedAssetsArray addObject:asset];
 }
 
@@ -214,8 +254,7 @@ static NSString* const NEAssetsViewCellReuseIdentifier = @"NEAssetsViewCell";
     }
 }
 
-- (void)deseletedAssets:(NEAsset *)asset
-{
+- (void)deseletedAssets:(NEAsset *)asset {
     [self removeAssetsObject:asset];
     self.sendButton.badgeValue = [NSString stringWithFormat:@"%@",@(self.selectedAssetsArray.count)];
     if (self.selectedAssetsArray.count < 1) {
@@ -233,7 +272,11 @@ static NSString* const NEAssetsViewCellReuseIdentifier = @"NEAssetsViewCell";
         layout.minimumLineSpacing = 2.0;
         layout.minimumInteritemSpacing = 2.0;
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        _imageFlowCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.navigationController.navigationBar.frame)) collectionViewLayout:layout];
+        CGFloat toolBarHeight = 0;
+        if (![UINavigationBar appearance].isTranslucent) {
+            toolBarHeight = CGRectGetHeight(self.navigationController.navigationBar.frame) + 20;
+        }
+        _imageFlowCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _imageFlowCollectionView.backgroundColor = [UIColor clearColor];
         [_imageFlowCollectionView registerClass:[NEAssetsViewCell class] forCellWithReuseIdentifier:NEAssetsViewCellReuseIdentifier];
         
@@ -241,7 +284,6 @@ static NSString* const NEAssetsViewCellReuseIdentifier = @"NEAssetsViewCell";
         _imageFlowCollectionView.delegate = self;
         _imageFlowCollectionView.dataSource = self;
         _imageFlowCollectionView.showsHorizontalScrollIndicator = YES;
-        [self.view addSubview:_imageFlowCollectionView];
     }
     
     return _imageFlowCollectionView;
@@ -295,12 +337,15 @@ static NSString* const NEAssetsViewCellReuseIdentifier = @"NEAssetsViewCell";
 
 #pragma mark - NEAssetsViewCellDelegate
 - (void)didSelectItemAssetsViewCell:(NEAssetsViewCell *)assetsCell {
-    assetsCell.isSelected = [self seletedAssets:assetsCell.asset];
+    
+    NSIndexPath *indexPath = [self.imageFlowCollectionView indexPathForCell:assetsCell];
+    assetsCell.isSelected = [self seletedAssets:self.assetsArray[indexPath.row]];
 }
 
 - (void)didDeselectItemAssetsViewCell:(NEAssetsViewCell *)assetsCell {
     assetsCell.isSelected = NO;
-    [self deseletedAssets:assetsCell.asset];
+    NSIndexPath *indexPath = [self.imageFlowCollectionView indexPathForCell:assetsCell];
+    [self deseletedAssets:self.assetsArray[indexPath.row]];
 }
 
 #pragma mark - UICollectionView delegate and Datasource
@@ -367,7 +412,6 @@ static NSString* const NEAssetsViewCellReuseIdentifier = @"NEAssetsViewCell";
 }
 
 - (void)dealloc {
-
 }
 
 #pragma mark -- getter
@@ -376,5 +420,20 @@ static NSString* const NEAssetsViewCellReuseIdentifier = @"NEAssetsViewCell";
         _limiteCount = 9;
     }
     return _limiteCount;
+}
+
+#pragma mark -- UIViewControllerPreviewingDelegate
+- (nullable UIViewController *)previewingContext:(id <UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+    NEPreviewController *viewController = [[self NEImagePickerController].touchPreviewImageControllerClass new];
+    CGPoint point = [self.imageFlowCollectionView convertPoint:location fromView:self.view];
+    /** 通过坐标活的当前cell indexPath */
+    NSIndexPath *indexPath = [self.imageFlowCollectionView indexPathForItemAtPoint:point];
+    /** 获得当前cell */
+    NEAssetsViewCell *cell = (NEAssetsViewCell *)[self.imageFlowCollectionView cellForItemAtIndexPath:indexPath];
+    [viewController setAsset:cell.asset];
+    return viewController;
+}
+- (void)previewingContext:(id <UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+    [self showViewController:viewControllerToCommit sender:self];
 }
 @end

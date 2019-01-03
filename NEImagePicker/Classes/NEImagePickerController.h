@@ -10,8 +10,6 @@
 #import "NEAsset.h"
 #import "NEImagePickerSourceConfig.h"
 
-@class ALAssetsFilter;
-
 FOUNDATION_EXTERN NSString * _Nullable kNEImagePickerStoredGroupKey;
 
 typedef NS_ENUM(NSUInteger, NEImagePickerFilterType) {
@@ -20,6 +18,7 @@ typedef NS_ENUM(NSUInteger, NEImagePickerFilterType) {
     NEImagePickerFilterTypeVideos,
 };
 
+@protocol NEImagePickerControllerDelegate;
 @class NEImagePickerController;
 @protocol NEImagePickerControllerDelegate <NSObject>
 @optional
@@ -48,13 +47,17 @@ typedef NS_ENUM(NSUInteger, NEImagePickerFilterType) {
 @property (nonatomic, assign) NEImagePickerFilterType filterType;
 @property (nonatomic ,assign) NSUInteger limiteCount;
 @property (nonatomic ,copy)   NSString * _Nullable confirmText;   ///底部toolBar 确认按钮文案
+@property (nonatomic ,assign) BOOL   needPreview;     // 是否需要预览 ，默认是YES
 @property (nonatomic ,strong) UIColor * _Nullable  tintColor;
 @property (nonatomic ,strong) UIColor * _Nullable  disableTintColor;
 @property (nonatomic ,strong) UIColor * _Nullable  disableTitleColor;
 @property (nonatomic ,strong) UIColor * _Nullable  enableTitleColor;
 
 @property (nonatomic ,strong) NEImagePickerSourceConfig *sourceConfig;
-
+// 是否开启3D touch
+@property (nonatomic ,assign) BOOL  open3DTouch;
+// 一定要是NEPreviewController的子类
+@property (nonatomic ,strong) Class touchPreviewImageControllerClass;
 ///获取系统相册最后一张照片
 - (void)lastAsset:(void (^_Nullable)(NEAsset * _Nullable, NSError *_Nullable))block;
 @end

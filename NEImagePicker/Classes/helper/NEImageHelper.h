@@ -76,4 +76,7 @@
         includeEmpty:(BOOL)includeEmpty;
 
 + (NEAlbum *)generateAlbumWithAssetCollection:(PHAssetCollection *)assetCollection;
+
++ (NEAsset *)lastVideoAsset;
++ (void)lastVideoCover:(void(^)(UIImage *cover))complete;
 @end

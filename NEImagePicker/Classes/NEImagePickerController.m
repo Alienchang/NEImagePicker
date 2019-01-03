@@ -21,7 +21,14 @@ NSString *kNEImagePickerStoredGroupKey = @"sc";
 @end
 
 @implementation NEImagePickerController
-
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _needPreview = YES;
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
@@ -47,14 +54,19 @@ NSString *kNEImagePickerStoredGroupKey = @"sc";
             NEAlbum *album = [NEAlbum new];
             [album setLocalIdentifier:propwetyID];
             [album setAlbumTitle:assetCollection.localizedTitle];
+            __weak typeof(self) weakSelf = self;
             [album fetchAlbumImage:^(UIImage *image) {
-                NEAlbumTableViewController *albumTableViewController = [NEAlbumTableViewController new];
-                [albumTableViewController setLimiteCount:weakself.limiteCount];
-                [albumTableViewController setConfirmText:weakself.confirmText];
-                NEImageFlowViewController *imageFlowController = [[NEImageFlowViewController alloc] initWithAlbum:album];
-                [imageFlowController setConfirmText:weakself.confirmText];
-                [imageFlowController setLimiteCount:weakself.limiteCount];
-                [weakself setViewControllers:@[albumTableViewController,imageFlowController]];
+                if (image) {
+                    NEAlbumTableViewController *albumTableViewController = [NEAlbumTableViewController new];
+                    [albumTableViewController setLimiteCount:weakself.limiteCount];
+                    [albumTableViewController setConfirmText:weakself.confirmText];
+                    NEImageFlowViewController *imageFlowController = [[NEImageFlowViewController alloc] initWithAlbum:album];
+                    [imageFlowController setConfirmText:weakself.confirmText];
+                    [imageFlowController setLimiteCount:weakself.limiteCount];
+                    [weakself setViewControllers:@[albumTableViewController,imageFlowController]];
+                } else {
+                    [weakSelf showAlbumList];
+                }
             }];
         } else {
             [self showAlbumList];
@@ -127,6 +139,7 @@ NSString *kNEImagePickerStoredGroupKey = @"sc";
 
 - (void)lastAsset:(void (^)(NEAsset * _Nullable, NSError *_Nullable))block {
     PHFetchOptions *options = [PHFetchOptions new];
+    options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
     PHFetchResult *assetsFetchResults = [PHAsset fetchAssetsWithOptions:options];
     PHAsset *phasset = [assetsFetchResults lastObject];
     if (phasset) {
