@@ -1,0 +1,6 @@
+framework module NEImagePicker {
+  umbrella header "NEImagePicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

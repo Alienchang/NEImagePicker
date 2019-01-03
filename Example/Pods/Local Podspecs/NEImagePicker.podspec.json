@@ -1,0 +1,22 @@
+{
+  "name": "NEImagePicker",
+  "version": "0.1.0",
+  "summary": "A short description of NEImagePicker.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Alienchang/NEImagePicker",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Alienchang": "1217493217@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/Alienchang/NEImagePicker.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "NEImagePicker/Classes/**/*"
+}

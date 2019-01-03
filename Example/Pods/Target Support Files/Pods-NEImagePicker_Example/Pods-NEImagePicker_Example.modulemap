@@ -1,0 +1,6 @@
+framework module Pods_NEImagePicker_Example {
+  umbrella header "Pods-NEImagePicker_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

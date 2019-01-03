@@ -1,0 +1,16 @@
+PODS:
+  - NEImagePicker (0.1.0)
+
+DEPENDENCIES:
+  - NEImagePicker (from `../`)
+
+EXTERNAL SOURCES:
+  NEImagePicker:
+    :path: ../
+
+SPEC CHECKSUMS:
+  NEImagePicker: 4fde5572a5b2c27727868b1ffc186985e288d281
+
+PODFILE CHECKSUM: 543045f58e58ebe7d447040a5cac90449e539dae
+
+COCOAPODS: 1.4.0
